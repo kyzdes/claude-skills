@@ -6,12 +6,12 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "keys-keeper",
-      "description": "macOS Keychain-backed secrets manager skill — agents architecturally cannot leak plaintext.",
+      "description": "Cross-platform (macOS + Windows) secrets manager skill — agents architecturally cannot leak plaintext. Backed by macOS Keychain or Windows Credential Manager.",
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/keys-keeper-skill.git"
