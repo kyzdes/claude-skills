@@ -6,47 +6,47 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "keys-keeper",
       "description": "macOS Keychain-backed secrets manager skill — agents architecturally cannot leak plaintext.",
       "source": {
-        "source": "github",
-        "repo": "kyzdes/keys-keeper-skill"
+        "source": "url",
+        "url": "https://github.com/kyzdes/keys-keeper-skill.git"
       }
     },
     {
       "name": "ux-planner",
       "description": "Turn loose product descriptions into structured English UX Specs ready for handoff to a visual-design agent.",
       "source": {
-        "source": "github",
-        "repo": "kyzdes/ux-planner-skill"
+        "source": "url",
+        "url": "https://github.com/kyzdes/ux-planner-skill.git"
       }
     },
     {
       "name": "context-map",
       "description": "Generate, update, audit, and conflict-check project context-map.md files for AI coding agents — project memory that survives context resets.",
       "source": {
-        "source": "github",
-        "repo": "kyzdes/context-map-skill"
+        "source": "url",
+        "url": "https://github.com/kyzdes/context-map-skill.git"
       }
     },
     {
       "name": "trip-planner",
       "description": "Extract flight + hotel data from Aviasales / Ostrovok links and compile into a self-contained HTML itinerary.",
       "source": {
-        "source": "github",
-        "repo": "kyzdes/trip-planner-skill"
+        "source": "url",
+        "url": "https://github.com/kyzdes/trip-planner-skill.git"
       }
     },
     {
       "name": "stitch-design",
       "description": "Google Stitch AI UI generation — brainstorm, generate, edit, iterate on UI designs from text prompts. Bundles 4 sub-skills (design / theme / edit / upload).",
       "source": {
-        "source": "github",
-        "repo": "kyzdes/claude-stitch-design"
+        "source": "url",
+        "url": "https://github.com/kyzdes/claude-stitch-design.git"
       }
     }
   ]
