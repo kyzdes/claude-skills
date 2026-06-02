@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "keys-keeper",
-      "description": "Cross-platform (macOS + Windows) secrets manager skill — agents architecturally cannot leak plaintext. Backed by macOS Keychain or Windows Credential Manager.",
+      "description": "Cross-platform (macOS + Windows + Linux) secrets manager skill: stores API keys, SSH keys, server creds, and domain info in the OS-native credential store (macOS Keychain / Windows Credential Manager / Linux Secret Service, encrypted-file fallback on headless servers) via the `keys` CLI. Agents architecturally cannot reveal plaintext (Sealed wrapper + env-gated reveal). First-class Claude Code skill; `keys init` emits equivalent rule files for Cursor, Aider, Codex CLI, and Cline.",
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/keys-keeper-skill.git"
