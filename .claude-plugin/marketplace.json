@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.6.0"
+    "version": "1.7.0"
   },
   "plugins": [
     {
@@ -55,6 +55,14 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/agentix-skill.git"
+      }
+    },
+    {
+      "name": "sentryx",
+      "description": "Instrument an app with SentryX over a remote MCP: error tracking + distributed tracing + product analytics/funnels, correlated by trace_id. Connect with an org Bearer token, then onboard a project (detect stack → 5 product questions → create_project → instrument_hint → define funnels → verify get_funnel) and fix bugs (search_issues → prepare_fix_bundle). Ships the full MCP tool reference, per-stack copy-paste snippets, and end-to-end recipes.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/sentryx-skill.git"
       }
     }
   ]
