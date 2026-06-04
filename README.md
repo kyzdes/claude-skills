@@ -20,6 +20,8 @@ Then install the skills you actually want:
 /plugin install context-map@claude-skills
 /plugin install trip-planner@claude-skills
 /plugin install stitch-design@claude-skills
+/plugin install agent-docs-architect@claude-skills
+/plugin install agentix@claude-skills
 ```
 
 ## What's in here
@@ -31,10 +33,12 @@ Then install the skills you actually want:
 | **context-map** | Generates / audits / updates `context-map.md` files — project memory that survives AI context resets. Tracks decisions, known issues, gotchas. | "make a context map", "audit project docs", "agent onboarding doc" |
 | **trip-planner** | Extracts flight + hotel data from Aviasales (`avs.io`, `aviasales.ru`) and Ostrovok (`corp.ostrovok.ru`) links, compiles into self-contained HTML itinerary. | Pasting `avs.io/*` / `corp.ostrovok.ru/*` links, "поездка", "отель", "перелёт" |
 | **stitch-design** | Google Stitch AI UI generation — bundles 4 sub-skills (design / theme / edit / upload). Generates HTML mockups with Tailwind CSS + PNG screenshots from text prompts. | "design a UI", "make a mockup", "stitch this screen" |
+| **agent-docs-architect** | Decomposes a complex codebase into layered, agent-readable docs (top-level MAP + per-domain deep docs + distributed CLAUDE.md) with a CI gate that keeps them fresh. | "make agent docs", "document this codebase for agents", "layered docs" |
+| **agentix** | Teaches agents to work the [Agentix](https://github.com/kyzdes/agentix) issue tracker over MCP — orient via `get_started` + the wiki index, load one issue with `get_context`, file well-specced issues (task-spec + checklist). Full tool reference + index convention. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
 
 ## Why auto-update is automatic
 
-Each plugin in this marketplace ships a `SessionStart` hook that pulls its own source and the marketplace itself on every Claude Code session start. The hook is debounced (4h cooldown via shared stamp file), so even if you have all 5 plugins installed they don't 5× the network work.
+Each plugin in this marketplace ships a `SessionStart` hook that pulls its own source and the marketplace itself on every Claude Code session start. The hook is debounced (4h cooldown via shared stamp file), so even if you have every plugin installed they don't N× the network work.
 
 You can tune the cooldown via `KKZ_AUTO_UPDATE_INTERVAL_SEC` env var. Set it to `0` to update on every session, or to `86400` for once a day.
 
@@ -47,6 +51,8 @@ Each plugin lives in its own GitHub repo and versions independently. This market
 - [`kyzdes/context-map-skill`](https://github.com/kyzdes/context-map-skill)
 - [`kyzdes/trip-planner-skill`](https://github.com/kyzdes/trip-planner-skill)
 - [`kyzdes/claude-stitch-design`](https://github.com/kyzdes/claude-stitch-design)
+- [`kyzdes/agent-docs-architect`](https://github.com/kyzdes/agent-docs-architect)
+- [`kyzdes/agentix-skill`](https://github.com/kyzdes/agentix-skill)
 
 ## Codex CLI?
 
