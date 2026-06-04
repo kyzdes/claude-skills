@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
     {
@@ -47,14 +47,6 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/claude-stitch-design.git"
-      }
-    },
-    {
-      "name": "agent-docs-architect",
-      "description": "Decompose a complex codebase into layered, agent-readable docs (top-level MAP + per-domain deep docs + distributed CLAUDE.md) with a CI gate that keeps them fresh. Parallel subagent dispatch for ≥5 domains.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/agent-docs-architect.git"
       }
     },
     {
