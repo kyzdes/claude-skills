@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.4.0"
+    "version": "1.5.0"
   },
   "plugins": [
     {
@@ -27,7 +27,7 @@
     },
     {
       "name": "context-map",
-      "description": "Generate, update, audit, and conflict-check project context-map.md files for AI coding agents — project memory that survives context resets.",
+      "description": "Two-layer agent docs: a committed agent-docs/ navigation tree (MAP + per-domain deep docs) and a gitignored context-map-<slug>/ memory tree (decisions, known issues, gotchas, tasks). Generate, decompose, update, audit, reconcile, and conflict-check project docs for AI coding agents — navigation that survives a big codebase plus memory that survives a context reset.",
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/context-map-skill.git"
