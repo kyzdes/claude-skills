@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.7.0"
+    "version": "1.7.1"
   },
   "plugins": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "name": "agentix",
-      "description": "Teach AI agents to work the Agentix issue tracker over MCP: orient with get_started + the wiki index, load one issue with get_context, and file well-specced issues (task-spec + checklist). Ships the full 36-tool reference, a task-creation template, the index convention, and common workflows.",
+      "description": "Teach AI agents to work the Agentix issue tracker over MCP: orient with get_started + the wiki index, load one issue with get_context, and file well-specced issues (task-spec + checklist). Ships the full 43-tool reference (incl. delete/unlink), a REST-mirror map, a task-creation template, the index convention, and common workflows.",
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/agentix-skill.git"
