@@ -22,6 +22,7 @@ Then install the skills you actually want:
 /plugin install stitch-design@claude-skills
 /plugin install agent-docs-architect@claude-skills
 /plugin install agentix@claude-skills
+/plugin install model-to-bot@claude-skills
 ```
 
 ## What's in here
@@ -35,6 +36,7 @@ Then install the skills you actually want:
 | **stitch-design** | Google Stitch AI UI generation — bundles 4 sub-skills (design / theme / edit / upload). Generates HTML mockups with Tailwind CSS + PNG screenshots from text prompts. | "design a UI", "make a mockup", "stitch this screen" |
 | **agent-docs-architect** | Decomposes a complex codebase into layered, agent-readable docs (top-level MAP + per-domain deep docs + distributed CLAUDE.md) with a CI gate that keeps them fresh. | "make agent docs", "document this codebase for agents", "layered docs" |
 | **agentix** | Teaches agents to work the [Agentix](https://github.com/kyzdes/agentix) issue tracker over MCP — orient via `get_started` + the wiki index, load one issue with `get_context`, file well-specced issues (task-spec + checklist). Full tool reference + index convention. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
+| **model-to-bot** | Turns a model / HF Space / API into a production Telegram bot — 7-phase playbook (Discover→…→Deploy) + 32-entry gotchas catalog + real starter templates. *(Private repo — installs for the owner.)* | "build a telegram bot for X", "wrap this Space in a bot", "model-backed bot" |
 
 ## Why auto-update is automatic
 
@@ -53,6 +55,7 @@ Each plugin lives in its own GitHub repo and versions independently. This market
 - [`kyzdes/claude-stitch-design`](https://github.com/kyzdes/claude-stitch-design)
 - [`kyzdes/agent-docs-architect`](https://github.com/kyzdes/agent-docs-architect)
 - [`kyzdes/agentix-skill`](https://github.com/kyzdes/agentix-skill)
+- [`kyzdes/model-to-bot`](https://github.com/kyzdes/model-to-bot) *(private)*
 
 ## Codex CLI?
 

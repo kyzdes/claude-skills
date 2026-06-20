@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.7.1"
+    "version": "1.8.0"
   },
   "plugins": [
     {
@@ -63,6 +63,14 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/sentryx-skill.git"
+      }
+    },
+    {
+      "name": "model-to-bot",
+      "description": "Build a polished, production Telegram bot around a model / HF Space / API — a 7-phase playbook (Discover→Design→Menus→Data→Backend→Build→Deploy), a 32-entry gotchas catalog, and real starter module templates. (Private repo — installs for the owner.)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/model-to-bot.git"
       }
     }
   ]
