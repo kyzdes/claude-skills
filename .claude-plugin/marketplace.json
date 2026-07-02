@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.8.0"
+    "version": "1.9.0"
   },
   "plugins": [
     {
@@ -71,6 +71,14 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/model-to-bot.git"
+      }
+    },
+    {
+      "name": "dokpilot",
+      "description": "Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus a local dashboard for servers, databases, domains, and logs. Deploys via a two-phase worker: a read-only pass analyzes the untrusted repo into a validated manifest, then infra is actuated from that manifest under a plan-then-confirm gate; destroy is guarded by a server-minted single-use nonce. Local, single-user (macOS/Linux).",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/dokpilot.git"
       }
     }
   ]
