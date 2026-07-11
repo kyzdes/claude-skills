@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.9.0"
+    "version": "1.10.0"
   },
   "plugins": [
     {
@@ -79,6 +79,14 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/dokpilot.git"
+      }
+    },
+    {
+      "name": "hostbrr-vps",
+      "description": "Manage a HostBRR VPS fleet via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions (restart/boot/shutdown/powerOff), SSH keys, ISO, VNC, rescue, resource packs, task polling. Teaches the correct client API base path (/api, not /api/v1), Bearer auth pulled from keys-keeper without exposing the token, and the FQDN-hostname rebuild rule. Ships the full endpoint reference. (Private repo — installs for the owner.)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/hostbrr-vps-skill.git"
       }
     }
   ]
