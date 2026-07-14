@@ -20,9 +20,11 @@ Then install the skills you actually want:
 /plugin install context-map@claude-skills
 /plugin install trip-planner@claude-skills
 /plugin install stitch-design@claude-skills
-/plugin install agent-docs-architect@claude-skills
 /plugin install agentix@claude-skills
+/plugin install sentryx@claude-skills
 /plugin install model-to-bot@claude-skills
+/plugin install dokpilot@claude-skills
+/plugin install hostbrr-vps@claude-skills
 /plugin install openfang@claude-skills
 ```
 
@@ -35,8 +37,10 @@ Then install the skills you actually want:
 | **context-map** | Generates / audits / updates `context-map.md` files — project memory that survives AI context resets. Tracks decisions, known issues, gotchas. | "make a context map", "audit project docs", "agent onboarding doc" |
 | **trip-planner** | Extracts flight + hotel data from Aviasales (`avs.io`, `aviasales.ru`) and Ostrovok (`corp.ostrovok.ru`) links, compiles into self-contained HTML itinerary. | Pasting `avs.io/*` / `corp.ostrovok.ru/*` links, "поездка", "отель", "перелёт" |
 | **stitch-design** | Google Stitch AI UI generation — bundles 4 sub-skills (design / theme / edit / upload). Generates HTML mockups with Tailwind CSS + PNG screenshots from text prompts. | "design a UI", "make a mockup", "stitch this screen" |
-| **agent-docs-architect** | Decomposes a complex codebase into layered, agent-readable docs (top-level MAP + per-domain deep docs + distributed CLAUDE.md) with a CI gate that keeps them fresh. | "make agent docs", "document this codebase for agents", "layered docs" |
 | **agentix** | Teaches agents to work the [Agentix](https://github.com/kyzdes/agentix) issue tracker over MCP — orient via `get_started` + the wiki index, load one issue with `get_context`, file well-specced issues (task-spec + checklist). Full tool reference + index convention. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
+| **sentryx** | Instrument an app with SentryX over a remote MCP — error tracking + distributed tracing + product analytics/funnels, correlated by `trace_id`. Connect-once flow, stack-aware instrument flow, and a fix-bugs flow (`search_issues` → `prepare_fix_bundle`). | Connected to a `sentryx` MCP server, "instrument my app", "error tracking", "define a funnel", "set up SentryX" |
+| **dokpilot** | Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus managing servers, databases, domains, and logs. | "deploy this", "put it online", "set up a VPS", "my site is down", "redeploy", Dokploy |
+| **hostbrr-vps** | Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions, SSH keys, ISO, VNC, rescue mode, resource packs, async task polling. | HostBRR servers, `vps.hostbrr.com`, "rebuild a VPS", a HostBRR API token |
 | **model-to-bot** | Turns a model / HF Space / API into a production Telegram bot — 7-phase playbook (Discover→…→Deploy) + 32-entry gotchas catalog + real starter templates. *(Private repo — installs for the owner.)* | "build a telegram bot for X", "wrap this Space in a bot", "model-backed bot" |
 | **openfang** | Operator playbook for OpenFang v0.6.9 (the Rust "agent operating system"). Router SKILL.md + 11 references + 3 slash commands + a read-only diagnose script + the OpenFang MCP server. Every claim marked VERIFIED / UPSTREAM / SUSPECT; 385 verified against a live install. Upstream is abandoned at v0.6.9 — workarounds are permanent. | "перезапусти openfang", "агент не отвечает", "добавь модель", "openfang молчит", "telegram bot silent" |
 
@@ -55,9 +59,11 @@ Each plugin lives in its own GitHub repo and versions independently. This market
 - [`kyzdes/context-map-skill`](https://github.com/kyzdes/context-map-skill)
 - [`kyzdes/trip-planner-skill`](https://github.com/kyzdes/trip-planner-skill)
 - [`kyzdes/claude-stitch-design`](https://github.com/kyzdes/claude-stitch-design)
-- [`kyzdes/agent-docs-architect`](https://github.com/kyzdes/agent-docs-architect)
 - [`kyzdes/agentix-skill`](https://github.com/kyzdes/agentix-skill)
+- [`kyzdes/sentryx-skill`](https://github.com/kyzdes/sentryx-skill)
 - [`kyzdes/model-to-bot`](https://github.com/kyzdes/model-to-bot) *(private)*
+- [`kyzdes/dokpilot`](https://github.com/kyzdes/dokpilot)
+- [`kyzdes/hostbrr-vps-skill`](https://github.com/kyzdes/hostbrr-vps-skill)
 - [`kyzdes/openfang-skill`](https://github.com/kyzdes/openfang-skill)
 
 ## Codex CLI?
