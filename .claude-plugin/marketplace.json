@@ -1,93 +1,101 @@
 {
-  "name": "claude-skills",
-  "owner": {
-    "name": "kyzdes",
-    "email": "kyzdes5@gmail.com"
-  },
-  "metadata": {
-    "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.10.0"
-  },
-  "plugins": [
-    {
-      "name": "keys-keeper",
-      "description": "Cross-platform (macOS + Windows + Linux) secrets manager skill: stores API keys, SSH keys, server creds, and domain info in the OS-native credential store (macOS Keychain / Windows Credential Manager / Linux Secret Service, encrypted-file fallback on headless servers) via the `keys` CLI. Agents architecturally cannot reveal plaintext (Sealed wrapper + env-gated reveal). First-class Claude Code skill; `keys init` emits equivalent rule files for Cursor, Aider, Codex CLI, and Cline.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/keys-keeper-skill.git"
-      }
+    "name": "claude-skills",
+    "owner": {
+        "name": "kyzdes",
+        "email": "kyzdes5@gmail.com"
     },
-    {
-      "name": "ux-planner",
-      "description": "Turn loose product descriptions into structured English UX Specs ready for handoff to a visual-design agent.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/ux-planner-skill.git"
-      }
+    "metadata": {
+        "description": "kyzdes' personal Claude Code skill marketplace.",
+        "version": "1.11.0"
     },
-    {
-      "name": "context-map",
-      "description": "Two-layer agent docs: a committed agent-docs/ navigation tree (MAP + per-domain deep docs) and a gitignored context-map-<slug>/ memory tree (decisions, known issues, gotchas, tasks). Generate, decompose, update, audit, reconcile, and conflict-check project docs for AI coding agents — navigation that survives a big codebase plus memory that survives a context reset.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/context-map-skill.git"
-      }
-    },
-    {
-      "name": "trip-planner",
-      "description": "Extract flight + hotel data from Aviasales / Ostrovok links and compile into a self-contained HTML itinerary.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/trip-planner-skill.git"
-      }
-    },
-    {
-      "name": "stitch-design",
-      "description": "Google Stitch AI UI generation — brainstorm, generate, edit, iterate on UI designs from text prompts. Bundles 4 sub-skills (design / theme / edit / upload).",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/claude-stitch-design.git"
-      }
-    },
-    {
-      "name": "agentix",
-      "description": "Teach AI agents to work the Agentix issue tracker over MCP: orient with get_started + the wiki index, load one issue with get_context, and file well-specced issues (task-spec + checklist). Ships the full 43-tool reference (incl. delete/unlink), a REST-mirror map, a task-creation template, the index convention, and common workflows.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/agentix-skill.git"
-      }
-    },
-    {
-      "name": "sentryx",
-      "description": "Instrument an app with SentryX over a remote MCP: error tracking + distributed tracing + product analytics/funnels, correlated by trace_id. Connect with an org Bearer token, then onboard a project (detect stack → 5 product questions → create_project → instrument_hint → define funnels → verify get_funnel) and fix bugs (search_issues → prepare_fix_bundle). Ships the full MCP tool reference, per-stack copy-paste snippets, and end-to-end recipes.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/sentryx-skill.git"
-      }
-    },
-    {
-      "name": "model-to-bot",
-      "description": "Build a polished, production Telegram bot around a model / HF Space / API — a 7-phase playbook (Discover→Design→Menus→Data→Backend→Build→Deploy), a 32-entry gotchas catalog, and real starter module templates. (Private repo — installs for the owner.)",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/model-to-bot.git"
-      }
-    },
-    {
-      "name": "dokpilot",
-      "description": "Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus a local dashboard for servers, databases, domains, and logs. Deploys via a two-phase worker: a read-only pass analyzes the untrusted repo into a validated manifest, then infra is actuated from that manifest under a plan-then-confirm gate; destroy is guarded by a server-minted single-use nonce. Local, single-user (macOS/Linux).",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/dokpilot.git"
-      }
-    },
-    {
-      "name": "hostbrr-vps",
-      "description": "Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions (restart/boot/shutdown/powerOff), SSH keys, ISO, VNC, rescue, resource packs, task polling. Teaches the correct client API base path (/api, not /api/v1), Bearer auth kept out of the transcript, and the FQDN-hostname rebuild rule. Ships the full endpoint reference.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/kyzdes/hostbrr-vps-skill.git"
-      }
-    }
-  ]
+    "plugins": [
+        {
+            "name": "keys-keeper",
+            "description": "Cross-platform (macOS + Windows + Linux) secrets manager skill: stores API keys, SSH keys, server creds, and domain info in the OS-native credential store (macOS Keychain / Windows Credential Manager / Linux Secret Service, encrypted-file fallback on headless servers) via the `keys` CLI. Agents architecturally cannot reveal plaintext (Sealed wrapper + env-gated reveal). First-class Claude Code skill; `keys init` emits equivalent rule files for Cursor, Aider, Codex CLI, and Cline.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/keys-keeper-skill.git"
+            }
+        },
+        {
+            "name": "ux-planner",
+            "description": "Turn loose product descriptions into structured English UX Specs ready for handoff to a visual-design agent.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/ux-planner-skill.git"
+            }
+        },
+        {
+            "name": "context-map",
+            "description": "Two-layer agent docs: a committed agent-docs/ navigation tree (MAP + per-domain deep docs) and a gitignored context-map-<slug>/ memory tree (decisions, known issues, gotchas, tasks). Generate, decompose, update, audit, reconcile, and conflict-check project docs for AI coding agents — navigation that survives a big codebase plus memory that survives a context reset.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/context-map-skill.git"
+            }
+        },
+        {
+            "name": "trip-planner",
+            "description": "Extract flight + hotel data from Aviasales / Ostrovok links and compile into a self-contained HTML itinerary.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/trip-planner-skill.git"
+            }
+        },
+        {
+            "name": "stitch-design",
+            "description": "Google Stitch AI UI generation — brainstorm, generate, edit, iterate on UI designs from text prompts. Bundles 4 sub-skills (design / theme / edit / upload).",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/claude-stitch-design.git"
+            }
+        },
+        {
+            "name": "agentix",
+            "description": "Teach AI agents to work the Agentix issue tracker over MCP: orient with get_started + the wiki index, load one issue with get_context, and file well-specced issues (task-spec + checklist). Ships the full 43-tool reference (incl. delete/unlink), a REST-mirror map, a task-creation template, the index convention, and common workflows.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/agentix-skill.git"
+            }
+        },
+        {
+            "name": "sentryx",
+            "description": "Instrument an app with SentryX over a remote MCP: error tracking + distributed tracing + product analytics/funnels, correlated by trace_id. Connect with an org Bearer token, then onboard a project (detect stack → 5 product questions → create_project → instrument_hint → define funnels → verify get_funnel) and fix bugs (search_issues → prepare_fix_bundle). Ships the full MCP tool reference, per-stack copy-paste snippets, and end-to-end recipes.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/sentryx-skill.git"
+            }
+        },
+        {
+            "name": "model-to-bot",
+            "description": "Build a polished, production Telegram bot around a model / HF Space / API — a 7-phase playbook (Discover→Design→Menus→Data→Backend→Build→Deploy), a 32-entry gotchas catalog, and real starter module templates. (Private repo — installs for the owner.)",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/model-to-bot.git"
+            }
+        },
+        {
+            "name": "dokpilot",
+            "description": "Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus a local dashboard for servers, databases, domains, and logs. Deploys via a two-phase worker: a read-only pass analyzes the untrusted repo into a validated manifest, then infra is actuated from that manifest under a plan-then-confirm gate; destroy is guarded by a server-minted single-use nonce. Local, single-user (macOS/Linux).",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/dokpilot.git"
+            }
+        },
+        {
+            "name": "hostbrr-vps",
+            "description": "Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions (restart/boot/shutdown/powerOff), SSH keys, ISO, VNC, rescue, resource packs, task polling. Teaches the correct client API base path (/api, not /api/v1), Bearer auth kept out of the transcript, and the FQDN-hostname rebuild rule. Ships the full endpoint reference.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/hostbrr-vps-skill.git"
+            }
+        },
+        {
+            "name": "openfang",
+            "description": "Operator playbook for OpenFang v0.6.9 — the Rust \"agent operating system\" (CLI + daemon at ~/.openfang). Teaches the daemon lifecycle (foreground start, systemd-oomd trap), the startup-cached model registry (no reload command), agent.toml + capabilities RBAC, providers and the fallback chain, cron/triggers/workflows/hands, ollama embeddings, and a cost-ordered gotchas catalog verified against a live install. Ships 3 slash commands, a read-only diagnose script, and the OpenFang MCP server. Upstream is abandoned at v0.6.9 — every workaround is permanent.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/openfang-skill.git"
+            }
+        }
+    ]
 }

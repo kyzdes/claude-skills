@@ -23,6 +23,7 @@ Then install the skills you actually want:
 /plugin install agent-docs-architect@claude-skills
 /plugin install agentix@claude-skills
 /plugin install model-to-bot@claude-skills
+/plugin install openfang@claude-skills
 ```
 
 ## What's in here
@@ -37,6 +38,7 @@ Then install the skills you actually want:
 | **agent-docs-architect** | Decomposes a complex codebase into layered, agent-readable docs (top-level MAP + per-domain deep docs + distributed CLAUDE.md) with a CI gate that keeps them fresh. | "make agent docs", "document this codebase for agents", "layered docs" |
 | **agentix** | Teaches agents to work the [Agentix](https://github.com/kyzdes/agentix) issue tracker over MCP — orient via `get_started` + the wiki index, load one issue with `get_context`, file well-specced issues (task-spec + checklist). Full tool reference + index convention. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
 | **model-to-bot** | Turns a model / HF Space / API into a production Telegram bot — 7-phase playbook (Discover→…→Deploy) + 32-entry gotchas catalog + real starter templates. *(Private repo — installs for the owner.)* | "build a telegram bot for X", "wrap this Space in a bot", "model-backed bot" |
+| **openfang** | Operator playbook for OpenFang v0.6.9 (the Rust "agent operating system"). Router SKILL.md + 11 references + 3 slash commands + a read-only diagnose script + the OpenFang MCP server. Every claim marked VERIFIED / UPSTREAM / SUSPECT; 385 verified against a live install. Upstream is abandoned at v0.6.9 — workarounds are permanent. | "перезапусти openfang", "агент не отвечает", "добавь модель", "openfang молчит", "telegram bot silent" |
 
 ## Why auto-update is automatic
 
@@ -56,6 +58,7 @@ Each plugin lives in its own GitHub repo and versions independently. This market
 - [`kyzdes/agent-docs-architect`](https://github.com/kyzdes/agent-docs-architect)
 - [`kyzdes/agentix-skill`](https://github.com/kyzdes/agentix-skill)
 - [`kyzdes/model-to-bot`](https://github.com/kyzdes/model-to-bot) *(private)*
+- [`kyzdes/openfang-skill`](https://github.com/kyzdes/openfang-skill)
 
 ## Codex CLI?
 
