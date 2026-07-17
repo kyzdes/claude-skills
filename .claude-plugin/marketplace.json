@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.11.0"
+        "version": "1.12.0"
     },
     "plugins": [
         {
@@ -95,6 +95,14 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/openfang-skill.git"
+            }
+        },
+        {
+            "name": "clarity",
+            "description": "Правка русских рабочих текстов до чёткой и ёмкой речи: диагноз → 14 законов (деятель в подлежащее, номинализации → глаголы, вложенность вместо длины, шесть операций сжатия, селективные стоп-слова) → линт со словарями → тон-чек. Синтез 6 верифицированных deep-research исследований школ ясности (Williams, Оруэлл/Zinsser, Пинкер, Чуковский/Галь, инфостиль, психолингвистика); лечит и канцелярит, и AI-звучание; опровергнутые мифы — в чёрном списке.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/clarity-skill.git"
             }
         }
     ]

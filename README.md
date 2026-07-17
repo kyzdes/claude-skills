@@ -26,6 +26,7 @@ Then install the skills you actually want:
 /plugin install dokpilot@claude-skills
 /plugin install hostbrr-vps@claude-skills
 /plugin install openfang@claude-skills
+/plugin install clarity@claude-skills
 ```
 
 ## What's in here
@@ -43,6 +44,7 @@ Then install the skills you actually want:
 | **hostbrr-vps** | Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions, SSH keys, ISO, VNC, rescue mode, resource packs, async task polling. | HostBRR servers, `vps.hostbrr.com`, "rebuild a VPS", a HostBRR API token |
 | **model-to-bot** | Turns a model / HF Space / API into a production Telegram bot — 7-phase playbook (Discover→…→Deploy) + 32-entry gotchas catalog + real starter templates. *(Private repo — installs for the owner.)* | "build a telegram bot for X", "wrap this Space in a bot", "model-backed bot" |
 | **openfang** | Operator playbook for OpenFang v0.6.9 (the Rust "agent operating system"). Router SKILL.md + 11 references + 3 slash commands + a read-only diagnose script + the OpenFang MCP server. Every claim marked VERIFIED / UPSTREAM / SUSPECT; 385 verified against a live install. Upstream is abandoned at v0.6.9 — workarounds are permanent. | "перезапусти openfang", "агент не отвечает", "добавь модель", "openfang молчит", "telegram bot silent" |
+| **clarity** | Правка русских текстов до чёткой и ёмкой речи: диагноз → 14 законов → линт со словарями → тон-чек. Синтез 6 верифицированных ресерчей школ ясности (Williams, Оруэлл/Zinsser, Пинкер, Чуковский/Галь, инфостиль, психолингвистика); лечит и канцелярит, и AI-звучание; мифы — в чёрном списке. | "упакуй/причеши текст", "убери канцелярит", "звучит как ИИ", "сделай чётко и ёмко", "сократи без потери смысла" |
 
 ## Why auto-update is automatic
 
