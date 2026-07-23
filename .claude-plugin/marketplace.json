@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.12.0"
+        "version": "1.13.0"
     },
     "plugins": [
         {
@@ -103,6 +103,14 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/clarity-skill.git"
+            }
+        },
+        {
+            "name": "tailscale-vpn-coexist",
+            "description": "Make Tailscale reach peers while a global-tunnel VPN client (Shadowrocket, Hiddify, sing-box, Clash/Mihomo, NekoBox) is ON, on macOS or Ubuntu/Linux. Diagnoses the two independent failure layers — OS routing (100.64.0.0/10 hijacked by the VPN TUN) and the system HTTP proxy (*.ts.net swallowed) — and applies persistent fixes (route-keeper + skip-proxy), plus optional `tailscale serve` for a clean HTTPS name. Teaches the ordered diagnosis (tailscale ping -> route get -> real SSH-banner check, not the lying nc -z -> proxy layer) and ships a full macOS+Linux playbook.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/tailscale-vpn-coexist-skill.git"
             }
         }
     ]
