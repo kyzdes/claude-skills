@@ -1,0 +1,59 @@
+name: validate-marketplace
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate marketplace manifest
+        run: |
+          python3 - <<'PY'
+          import json
+          import pathlib
+          import re
+          import sys
+
+          path = pathlib.Path('.claude-plugin/marketplace.json')
+          try:
+              data = json.loads(path.read_text(encoding='utf-8'))
+          except (OSError, json.JSONDecodeError) as error:
+              sys.exit(f'error: invalid {path}: {error}')
+
+          if not data.get('name'):
+              sys.exit('error: marketplace name is required')
+          version = data.get('metadata', {}).get('version', '')
+          if not re.fullmatch(r'\d+\.\d+\.\d+', version):
+              sys.exit('error: metadata.version must be semantic x.y.z')
+
+          plugins = data.get('plugins')
+          if not isinstance(plugins, list) or not plugins:
+              sys.exit('error: plugins must be a non-empty list')
+
+          names = []
+          for index, plugin in enumerate(plugins):
+              name = plugin.get('name')
+              description = plugin.get('description')
+              source = plugin.get('source', {})
+              url = source.get('url')
+              if not name or not description:
+                  sys.exit(f'error: plugin {index} requires name and description')
+              if source.get('source') != 'url' or not isinstance(url, str) or not url.startswith('https://github.com/'):
+                  sys.exit(f'error: plugin {name!r} must use an HTTPS GitHub URL source')
+              names.append(name)
+
+          duplicates = sorted({name for name in names if names.count(name) > 1})
+          if duplicates:
+              sys.exit(f'error: duplicate plugin names: {duplicates}')
+          print(f'ok: {len(plugins)} plugins, marketplace version {version}')
+          PY

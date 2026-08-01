@@ -2,7 +2,8 @@
 
 A personal marketplace of [Claude Code](https://docs.claude.com/en/docs/claude-code) skills.
 
-Friends install once, get auto-update on every Claude Code session start. No manual `/plugin marketplace update` ever needed.
+Friends install once. Most plugins refresh automatically on Claude Code session
+start; Agentix keeps network updates opt-in.
 
 ## Install
 
@@ -38,7 +39,7 @@ Then install the skills you actually want:
 | **context-map** | Generates / audits / updates `context-map.md` files — project memory that survives AI context resets. Tracks decisions, known issues, gotchas. | "make a context map", "audit project docs", "agent onboarding doc" |
 | **trip-planner** | Extracts flight + hotel data from Aviasales (`avs.io`, `aviasales.ru`) and Ostrovok (`corp.ostrovok.ru`) links, compiles into self-contained HTML itinerary. | Pasting `avs.io/*` / `corp.ostrovok.ru/*` links, "поездка", "отель", "перелёт" |
 | **stitch-design** | Google Stitch AI UI generation — bundles 4 sub-skills (design / theme / edit / upload). Generates HTML mockups with Tailwind CSS + PNG screenshots from text prompts. | "design a UI", "make a mockup", "stitch this screen" |
-| **agentix** | Teaches agents to work the [Agentix](https://github.com/kyzdes/agentix) issue tracker over MCP — orient via `get_started` + the wiki index, load one issue with `get_context`, file well-specced issues (task-spec + checklist). Full tool reference + index convention. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
+| **agentix** | Works safely with the hosted [Agentix](https://github.com/kyzdes/agentix) tracker over its live 43-tool MCP contract, with REST fallback and context-efficient issue workflows. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
 | **sentryx** | Instrument an app with SentryX over a remote MCP — error tracking + distributed tracing + product analytics/funnels, correlated by `trace_id`. Connect-once flow, stack-aware instrument flow, and a fix-bugs flow (`search_issues` → `prepare_fix_bundle`). | Connected to a `sentryx` MCP server, "instrument my app", "error tracking", "define a funnel", "set up SentryX" |
 | **dokpilot** | Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus managing servers, databases, domains, and logs. | "deploy this", "put it online", "set up a VPS", "my site is down", "redeploy", Dokploy |
 | **hostbrr-vps** | Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions, SSH keys, ISO, VNC, rescue mode, resource packs, async task polling. | HostBRR servers, `vps.hostbrr.com`, "rebuild a VPS", a HostBRR API token |
@@ -46,11 +47,17 @@ Then install the skills you actually want:
 | **openfang** | Operator playbook for OpenFang v0.6.9 (the Rust "agent operating system"). Router SKILL.md + 11 references + 3 slash commands + a read-only diagnose script + the OpenFang MCP server. Every claim marked VERIFIED / UPSTREAM / SUSPECT; 385 verified against a live install. Upstream is abandoned at v0.6.9 — workarounds are permanent. | "перезапусти openfang", "агент не отвечает", "добавь модель", "openfang молчит", "telegram bot silent" |
 | **clarity** | Правка русских текстов до чёткой и ёмкой речи: диагноз → 14 законов → линт со словарями → тон-чек. Синтез 6 верифицированных ресерчей школ ясности (Williams, Оруэлл/Zinsser, Пинкер, Чуковский/Галь, инфостиль, психолингвистика); лечит и канцелярит, и AI-звучание; мифы — в чёрном списке. | "упакуй/причеши текст", "убери канцелярит", "звучит как ИИ", "сделай чётко и ёмко", "сократи без потери смысла" |
 
-## Why auto-update is automatic
+## Update behavior
 
-Each plugin in this marketplace ships a `SessionStart` hook that pulls its own source and the marketplace itself on every Claude Code session start. The hook is debounced (4h cooldown via shared stamp file), so even if you have every plugin installed they don't N× the network work.
+Most plugins in this marketplace ship a debounced `SessionStart` updater. Agentix v0.2 is network-safe by default and updates only when explicitly enabled:
 
-You can tune the cooldown via `KKZ_AUTO_UPDATE_INTERVAL_SEC` env var. Set it to `0` to update on every session, or to `86400` for once a day.
+```bash
+export AGENTIX_PLUGIN_AUTO_UPDATE=1
+```
+
+Its updater refreshes only `agentix@claude-skills`, serializes concurrent sessions, and keeps a four-hour cooldown. Configure that plugin with `AGENTIX_PLUGIN_AUTO_UPDATE_INTERVAL_SEC`; other marketplace plugins may still use the legacy shared `KKZ_AUTO_UPDATE_INTERVAL_SEC` setting.
+
+Set the relevant interval to `0` to update on every session, or to `86400` for once a day.
 
 ## Per-plugin source repos
 
@@ -74,4 +81,4 @@ Codex CLI compatibility with Claude Code's `marketplace.json` format is not docu
 
 ## License
 
-MIT for the marketplace manifest. Each plugin has its own LICENSE; check the linked repos.
+MIT for the marketplace manifest. Each plugin sets its own licensing terms; check the linked repository. The Agentix companion repository currently has no declared license, so its public source does not grant reuse permission.
