@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.14.0"
+        "version": "1.15.0"
     },
     "plugins": [
         {
@@ -111,6 +111,14 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/tailscale-vpn-coexist-skill.git"
+            }
+        },
+        {
+            "name": "opencode-provider-auditor",
+            "description": "Safely onboard OpenAI-compatible routers into OpenCode: discover every advertised model, dry-run bounded capability probes, verify availability, tool calling, reasoning, streaming and JSON mode, calculate test cost, and apply a secret-free configuration with backup and rollback.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/opencode-provider-auditor.git"
             }
         }
     ]
