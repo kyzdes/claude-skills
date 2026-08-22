@@ -46,6 +46,11 @@ Then install the skills you actually want:
 | **model-to-bot** | Turns a model / HF Space / API into a production Telegram bot — 7-phase playbook (Discover→…→Deploy) + 32-entry gotchas catalog + real starter templates. *(Private repo — installs for the owner.)* | "build a telegram bot for X", "wrap this Space in a bot", "model-backed bot" |
 | **openfang** | Operator playbook for OpenFang v0.6.9 (the Rust "agent operating system"). Router SKILL.md + 11 references + 3 slash commands + a read-only diagnose script + the OpenFang MCP server. Every claim marked VERIFIED / UPSTREAM / SUSPECT; 385 verified against a live install. Upstream is abandoned at v0.6.9 — workarounds are permanent. | "перезапусти openfang", "агент не отвечает", "добавь модель", "openfang молчит", "telegram bot silent" |
 | **clarity** | Правка русских текстов до чёткой и ёмкой речи: диагноз → 14 законов → линт со словарями → тон-чек. Синтез 6 верифицированных ресерчей школ ясности (Williams, Оруэлл/Zinsser, Пинкер, Чуковский/Галь, инфостиль, психолингвистика); лечит и канцелярит, и AI-звучание; мифы — в чёрном списке. | "упакуй/причеши текст", "убери канцелярит", "звучит как ИИ", "сделай чётко и ёмко", "сократи без потери смысла" |
+| **tailscale-vpn-coexist** | Чинит Tailscale, когда включён глобальный VPN-клиент: два независимых слоя отказа — маршруты `100.64.0.0/10` и системный HTTP-прокси. macOS и Ubuntu. | "tailscale не видит пиров", "VPN сломал ssh", `*.ts.net` недоступен |
+| **opencode-provider-auditor** | Безопасно заводит OpenAI-совместимые роутеры в OpenCode: находит модели, гоняет ограниченные пробы возможностей, считает стоимость теста, применяет конфиг без секретов с откатом. | "добавь провайдера в opencode", "проверь модели роутера" |
+| **aso** | Движок листинга App Store: семантика и укладка ключей, метаданные по локалям, тексты полей, ТЗ на иконку и скриншоты, отзывы, PPO и замер. Русский слой с измеренной морфологией. *(Private repo — installs for the owner.)* | "сделай ASO", "почему приложение не находят", "перепиши описание приложения" |
+| **research-engine** | Конвейер мультиагентного ресерча: тема режется на ТЗ, на каждое агент пишет полный отчёт, верификатор перепроверяет числа по первоисточникам и достраивает его, дальше своды, банк фактов, критик полноты и методика. Claude Code и Codex. | "собери базу знаний по теме", "глубокий ресерч", "разложи тему на ТЗ" |
+| **deck-copy** | Тексты презентаций по жанровым пресетам: носитель → пресет → titles-test на скелете → тело по законам ядра → линт. Паспорт измеримых цифр со сверкой по первоисточникам. | "тексты для деки", "заголовки слайдов", "перепиши слайды", "сделай питч" |
 
 ## Update behavior
 
@@ -74,6 +79,12 @@ Each plugin lives in its own GitHub repo and versions independently. This market
 - [`kyzdes/dokpilot`](https://github.com/kyzdes/dokpilot)
 - [`kyzdes/hostbrr-vps-skill`](https://github.com/kyzdes/hostbrr-vps-skill)
 - [`kyzdes/openfang-skill`](https://github.com/kyzdes/openfang-skill)
+- [`kyzdes/clarity-skill`](https://github.com/kyzdes/clarity-skill)
+- [`kyzdes/tailscale-vpn-coexist-skill`](https://github.com/kyzdes/tailscale-vpn-coexist-skill)
+- [`kyzdes/opencode-provider-auditor`](https://github.com/kyzdes/opencode-provider-auditor)
+- [`kyzdes/aso-skill`](https://github.com/kyzdes/aso-skill) *(private)*
+- [`kyzdes/research-engine-skill`](https://github.com/kyzdes/research-engine-skill)
+- [`kyzdes/deck-copy-skill`](https://github.com/kyzdes/deck-copy-skill)
 
 ## Codex CLI?
 
