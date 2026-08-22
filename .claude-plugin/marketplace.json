@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.16.0"
+        "version": "1.17.0"
     },
     "plugins": [
         {
@@ -127,6 +127,14 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/aso-skill.git"
+            }
+        },
+        {
+            "name": "research-engine",
+            "description": "Собирает по любой теме верифицированную базу знаний и методику поверх неё: тема режется на 5–16 ТЗ, на каждое агент пишет полный отчёт, следом верификатор перепроверяет нагруженные числа по первоисточникам и достраивает отчёт, затем строятся своды, банк фактов с провенансом, критик полноты и METHOD.md. Закон конвейера: ни один шаг не сжимает содержание. Работает в Claude Code (Workflow-исполнители) и в Codex (портируемый раннер поверх codex exec); файлы задач на диске одни и те же для обоих хостов. Ships engine-init, render-tasks, fanout, audit и build-index.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/research-engine-skill.git"
             }
         }
     ]
