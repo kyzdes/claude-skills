@@ -54,12 +54,10 @@ opt-outs, parallel sessions, failed updates, and slow subprocesses.
    no version, clients track its commit. Tags alone do not control this choice.
 2. For Keys Keeper, also keep `pyproject.toml`, package `__version__`, and the nested
    Codex manifest aligned; follow that repository's artifact checks.
-3. For fang-upgrade, edit the canonical root payload, then run
-   `python3 scripts/build_plugin.py` and `--check`. Preserve standalone installs.
-4. Publish and validate source changes before merging catalog references to them.
-5. Main is protected here: branch → PR → required `validate` → merge. Never bypass
+3. Publish and validate source changes before merging catalog references to them.
+4. Main is protected here: branch → PR → required `validate` → merge. Never bypass
    required checks or force-push the protected branch. Attach the PR to the task.
-6. For a renamed entry, append a `renames` map and document the required one-time
+5. For a renamed entry, append a `renames` map and document the required one-time
    installation. Keep its history. Do not unarchive old source repos or forcibly
    uninstall users' plugins as a side effect of catalog maintenance.
 

@@ -17,8 +17,7 @@ plugin, with serialized writes and bounded retries. Agentix keeps a separate,
 explicitly enabled, host-aware updater. No hook should update another plugin.
 
 `keys-keeper-skill` contains both the Python CLI and plugin; the old `keys-keeper`
-repository is archived. `fang-upgrade-skill` replaces the archived `openfang-skill`
-entry and generates its marketplace payload while preserving standalone clones.
+repository is archived.
 
 CI checks catalog structure, live public sources, and isolated installs daily as
 well as on PRs/main. Private-source coverage is shown explicitly in the report.
