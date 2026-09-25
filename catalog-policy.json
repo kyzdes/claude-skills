@@ -1,0 +1,19 @@
+{
+  "private_repositories": [
+    "kyzdes/model-to-bot",
+    "kyzdes/aso-skill"
+  ],
+  "shared_updater_plugins": [
+    "keys-keeper",
+    "ux-planner",
+    "context-map",
+    "trip-planner",
+    "stitch-design",
+    "sentryx",
+    "model-to-bot",
+    "clarity",
+    "aso",
+    "research-engine",
+    "deck-copy"
+  ]
+}

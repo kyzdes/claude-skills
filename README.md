@@ -1,95 +1,129 @@
 # kyzdes / claude-skills
 
-A personal marketplace of [Claude Code](https://docs.claude.com/en/docs/claude-code) skills.
-
-Friends install once. Most plugins refresh automatically on Claude Code session
-start; Agentix keeps network updates opt-in.
+A personal marketplace of 17 plugins for Claude Code. Codex can also read this
+catalog; compatibility depends on each plugin's packaged skills and integrations.
+The canonical catalog is `.claude-plugin/marketplace.json`.
 
 ## Install
 
-In Claude Code:
+Claude Code:
 
-```
+```text
 /plugin marketplace add kyzdes/claude-skills
-```
-
-Then install the skills you actually want:
-
-```
-/plugin install keys-keeper@claude-skills
-/plugin install ux-planner@claude-skills
-/plugin install context-map@claude-skills
-/plugin install trip-planner@claude-skills
-/plugin install stitch-design@claude-skills
-/plugin install agentix@claude-skills
-/plugin install sentryx@claude-skills
-/plugin install model-to-bot@claude-skills
-/plugin install dokpilot@claude-skills
-/plugin install hostbrr-vps@claude-skills
-/plugin install openfang@claude-skills
 /plugin install clarity@claude-skills
 ```
 
-## What's in here
+Replace `clarity` with a plugin name from the table. `model-to-bot` and `aso`
+require access to their private repositories; adding the public catalog does not
+grant that access.
 
-| Plugin | What it does | Triggers on |
-|---|---|---|
-| **keys-keeper** | macOS Keychain-backed secrets manager. Agents put API keys, SSH keys, server creds into your files **without ever seeing the value** — Sealed wrapper + env-gated reveal make leakage architecturally impossible. | "save my OpenRouter key", "put $X into .env", "ssh into prod" |
-| **ux-planner** | Turns vague product descriptions into structured English UX specs ready for handoff to a visual-design agent. Hybrid interview + advisor mode for archetype matching. | "хочу приложение для X", "design a SaaS", "сделай продукт" |
-| **context-map** | Generates / audits / updates `context-map.md` files — project memory that survives AI context resets. Tracks decisions, known issues, gotchas. | "make a context map", "audit project docs", "agent onboarding doc" |
-| **trip-planner** | Extracts flight + hotel data from Aviasales (`avs.io`, `aviasales.ru`) and Ostrovok (`corp.ostrovok.ru`) links, compiles into self-contained HTML itinerary. | Pasting `avs.io/*` / `corp.ostrovok.ru/*` links, "поездка", "отель", "перелёт" |
-| **stitch-design** | Google Stitch AI UI generation — bundles 4 sub-skills (design / theme / edit / upload). Generates HTML mockups with Tailwind CSS + PNG screenshots from text prompts. | "design a UI", "make a mockup", "stitch this screen" |
-| **agentix** | Works safely with the hosted [Agentix](https://github.com/kyzdes/agentix) tracker over its live 43-tool MCP contract, with REST fallback and context-efficient issue workflows. | Connected to an `agentix` MCP server, "заведи задачу", "create an issue", "plan an epic", Agentix |
-| **sentryx** | Instrument an app with SentryX over a remote MCP — error tracking + distributed tracing + product analytics/funnels, correlated by `trace_id`. Connect-once flow, stack-aware instrument flow, and a fix-bugs flow (`search_issues` → `prepare_fix_bundle`). | Connected to a `sentryx` MCP server, "instrument my app", "error tracking", "define a funnel", "set up SentryX" |
-| **dokpilot** | Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus managing servers, databases, domains, and logs. | "deploy this", "put it online", "set up a VPS", "my site is down", "redeploy", Dokploy |
-| **hostbrr-vps** | Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions, SSH keys, ISO, VNC, rescue mode, resource packs, async task polling. | HostBRR servers, `vps.hostbrr.com`, "rebuild a VPS", a HostBRR API token |
-| **model-to-bot** | Turns a model / HF Space / API into a production Telegram bot — 7-phase playbook (Discover→…→Deploy) + 32-entry gotchas catalog + real starter templates. *(Private repo — installs for the owner.)* | "build a telegram bot for X", "wrap this Space in a bot", "model-backed bot" |
-| **openfang** | Operator playbook for OpenFang v0.6.9 (the Rust "agent operating system"). Router SKILL.md + 11 references + 3 slash commands + a read-only diagnose script + the OpenFang MCP server. Every claim marked VERIFIED / UPSTREAM / SUSPECT; 385 verified against a live install. Upstream is abandoned at v0.6.9 — workarounds are permanent. | "перезапусти openfang", "агент не отвечает", "добавь модель", "openfang молчит", "telegram bot silent" |
-| **clarity** | Правка русских текстов до чёткой и ёмкой речи: диагноз → 14 законов → линт со словарями → тон-чек. Синтез 6 верифицированных ресерчей школ ясности (Williams, Оруэлл/Zinsser, Пинкер, Чуковский/Галь, инфостиль, психолингвистика); лечит и канцелярит, и AI-звучание; мифы — в чёрном списке. | "упакуй/причеши текст", "убери канцелярит", "звучит как ИИ", "сделай чётко и ёмко", "сократи без потери смысла" |
-| **tailscale-vpn-coexist** | Чинит Tailscale, когда включён глобальный VPN-клиент: два независимых слоя отказа — маршруты `100.64.0.0/10` и системный HTTP-прокси. macOS и Ubuntu. | "tailscale не видит пиров", "VPN сломал ssh", `*.ts.net` недоступен |
-| **opencode-provider-auditor** | Безопасно заводит OpenAI-совместимые роутеры в OpenCode: находит модели, гоняет ограниченные пробы возможностей, считает стоимость теста, применяет конфиг без секретов с откатом. | "добавь провайдера в opencode", "проверь модели роутера" |
-| **aso** | Движок листинга App Store: семантика и укладка ключей, метаданные по локалям, тексты полей, ТЗ на иконку и скриншоты, отзывы, PPO и замер. Русский слой с измеренной морфологией. *(Private repo — installs for the owner.)* | "сделай ASO", "почему приложение не находят", "перепиши описание приложения" |
-| **research-engine** | Конвейер мультиагентного ресерча: тема режется на ТЗ, на каждое агент пишет полный отчёт, верификатор перепроверяет числа по первоисточникам и достраивает его, дальше своды, банк фактов, критик полноты и методика. Claude Code и Codex. | "собери базу знаний по теме", "глубокий ресерч", "разложи тему на ТЗ" |
-| **deck-copy** | Тексты презентаций по жанровым пресетам: носитель → пресет → titles-test на скелете → тело по законам ядра → линт. Паспорт измеримых цифр со сверкой по первоисточникам. | "тексты для деки", "заголовки слайдов", "перепиши слайды", "сделай питч" |
-
-## Update behavior
-
-Most plugins in this marketplace ship a debounced `SessionStart` updater. Agentix v0.2 is network-safe by default and updates only when explicitly enabled:
+Codex CLI:
 
 ```bash
-export AGENTIX_PLUGIN_AUTO_UPDATE=1
+codex plugin marketplace add https://github.com/kyzdes/claude-skills.git
+codex plugin list --marketplace claude-skills --available --json
+codex plugin add clarity@claude-skills
 ```
 
-Its updater refreshes only `agentix@claude-skills`, serializes concurrent sessions, and keeps a four-hour cooldown. Configure that plugin with `AGENTIX_PLUGIN_AUTO_UPDATE_INTERVAL_SEC`; other marketplace plugins may still use the legacy shared `KKZ_AUTO_UPDATE_INTERVAL_SEC` setting.
+`clarity`, `research-engine`, and `deck-copy` have verified Codex installations.
+`fang-upgrade` includes both host manifests. This does not certify every plugin's
+MCP server or hook on both hosts. Open a new Codex task after changing installed
+plugins so it picks up the new skills.
 
-Set the relevant interval to `0` to update on every session, or to `86400` for once a day.
+## Catalog
 
-## Per-plugin source repos
+| Plugin | Purpose | Repository |
+|---|---|---|
+| **keys-keeper** | Route secret values to explicit local sinks without printing plaintext in normal agent tool output. This reduces accidental disclosure; it does not isolate secrets from arbitrary code running as the same OS user. | [source](https://github.com/kyzdes/keys-keeper-skill) |
+| **ux-planner** | Turn a product description into a structured UX specification. | [source](https://github.com/kyzdes/ux-planner-skill) |
+| **context-map** | Maintain a committed agent-docs navigation tree and a separate project memory tree. | [source](https://github.com/kyzdes/context-map-skill) |
+| **trip-planner** | Build a travel itinerary from flight and hotel sources. | [source](https://github.com/kyzdes/trip-planner-skill) |
+| **stitch-design** | Generate and iterate UI designs with Google Stitch; four skills. | [source](https://github.com/kyzdes/claude-stitch-design) |
+| **agentix** | Work with a remote Agentix issue tracker using live-contract discovery. | [source](https://github.com/kyzdes/agentix-skill) |
+| **sentryx** | Instrument and diagnose errors, traces, and funnels through SentryX. | [source](https://github.com/kyzdes/sentryx-skill) |
+| **model-to-bot** | Build a Telegram bot around a model or API. Private repository; access required. | [source](https://github.com/kyzdes/model-to-bot) |
+| **dokpilot** | Deploy and operate applications through Dokploy with explicit mutation controls. | [source](https://github.com/kyzdes/dokpilot) |
+| **hostbrr-vps** | Operate HostBRR VPS through the VirtFusion API. | [source](https://github.com/kyzdes/hostbrr-vps-skill) |
+| **fang-upgrade** | Operate the maintained OpenFang fork with target discovery, runbooks, and local scripts. | [source](https://github.com/kyzdes/fang-upgrade-skill) |
+| **clarity** | Edit Russian working text for clarity and concision. | [source](https://github.com/kyzdes/clarity-skill) |
+| **tailscale-vpn-coexist** | Diagnose Tailscale routing and proxy conflicts with a VPN client. | [source](https://github.com/kyzdes/tailscale-vpn-coexist-skill) |
+| **opencode-provider-auditor** | Inspect and configure OpenAI-compatible providers in OpenCode. | [source](https://github.com/kyzdes/opencode-provider-auditor) |
+| **aso** | Research and improve App Store listings. Private repository; access required. | [source](https://github.com/kyzdes/aso-skill) |
+| **research-engine** | Build a source-backed research knowledge base and methodology. | [source](https://github.com/kyzdes/research-engine-skill) |
+| **deck-copy** | Write and revise presentation text for its audience and delivery format. | [source](https://github.com/kyzdes/deck-copy-skill) |
 
-Each plugin lives in its own GitHub repo and versions independently. This marketplace is a thin manifest pointing at them:
+## Updates and controls
 
-- [`kyzdes/keys-keeper-skill`](https://github.com/kyzdes/keys-keeper-skill)
-- [`kyzdes/ux-planner-skill`](https://github.com/kyzdes/ux-planner-skill)
-- [`kyzdes/context-map-skill`](https://github.com/kyzdes/context-map-skill)
-- [`kyzdes/trip-planner-skill`](https://github.com/kyzdes/trip-planner-skill)
-- [`kyzdes/claude-stitch-design`](https://github.com/kyzdes/claude-stitch-design)
-- [`kyzdes/agentix-skill`](https://github.com/kyzdes/agentix-skill)
-- [`kyzdes/sentryx-skill`](https://github.com/kyzdes/sentryx-skill)
-- [`kyzdes/model-to-bot`](https://github.com/kyzdes/model-to-bot) *(private)*
-- [`kyzdes/dokpilot`](https://github.com/kyzdes/dokpilot)
-- [`kyzdes/hostbrr-vps-skill`](https://github.com/kyzdes/hostbrr-vps-skill)
-- [`kyzdes/openfang-skill`](https://github.com/kyzdes/openfang-skill)
-- [`kyzdes/clarity-skill`](https://github.com/kyzdes/clarity-skill)
-- [`kyzdes/tailscale-vpn-coexist-skill`](https://github.com/kyzdes/tailscale-vpn-coexist-skill)
-- [`kyzdes/opencode-provider-auditor`](https://github.com/kyzdes/opencode-provider-auditor)
-- [`kyzdes/aso-skill`](https://github.com/kyzdes/aso-skill) *(private)*
-- [`kyzdes/research-engine-skill`](https://github.com/kyzdes/research-engine-skill)
-- [`kyzdes/deck-copy-skill`](https://github.com/kyzdes/deck-copy-skill)
+Claude's native marketplace auto-update is an independent setting, controlled in
+`/plugin` → Marketplaces → `claude-skills`. Enabling it allows the host to update
+installed plugins, including Keys Keeper and Agentix. Hook environment flags do
+not disable the host's updater. Manual update is always explicit:
 
-## Codex CLI?
+```bash
+claude plugin marketplace update claude-skills
+claude plugin update clarity@claude-skills
+```
 
-Codex CLI compatibility with Claude Code's `marketplace.json` format is not documented. Codex reads `~/.claude/skills/<name>/SKILL.md` directly, so for Codex users a separate install path (e.g. `git clone` + symlink) will be added later. Today this marketplace is Claude Code-only.
+The repaired fallback hooks update **only their own plugin**. They skip work when
+native auto-update is enabled, run in the background, serialize Claude writes,
+and apply a four-hour cooldown only after success. Failed commands are bounded
+and get a short retry delay. Codex hook execution never updates a separate Claude
+installation. The fallback requires Python 3.9 or newer.
 
-## License
+- `KKZ_NO_AUTOUPDATE=1` disables these fallback hooks.
+- `KKZ_AUTO_UPDATE_INTERVAL_SEC` controls their success cooldown (default 14400).
+- Keys Keeper's fallback requires `KEYS_KEEPER_ENABLE_MUTABLE_AUTOUPDATE=1`;
+  `KEYS_KEEPER_NO_AUTOUPDATE=1` takes precedence.
+- Agentix keeps its own updater, disabled unless `AGENTIX_PLUGIN_AUTO_UPDATE=1`;
+  that updater targets only Agentix and uses `AGENTIX_PLUGIN_AUTO_UPDATE_INTERVAL_SEC`.
+- Plugins without an updater use the host's policy or manual updates.
 
-MIT for the marketplace manifest. Each plugin sets its own licensing terms; check the linked repository. The Agentix companion repository currently has no declared license, so its public source does not grant reuse permission.
+To forbid all automatic plugin changes, turn off native marketplace auto-update,
+set `KKZ_NO_AUTOUPDATE=1`, and leave Agentix opt-in disabled. These controls do not
+change Keys Keeper's separate vault-sync policy.
+
+A plugin's `plugin.json` version controls whether a new cached copy is installed.
+Increase that version when publishing changes; if it is omitted, the plugin can
+track commits. Git tags alone are not the update policy. See the official
+[versioning rules](https://code.claude.com/docs/en/plugins/host-marketplace#release-a-new-version).
+
+## OpenFang migration
+
+`openfang` pointed to an archived stock OpenFang snapshot. The maintained entry is
+now `fang-upgrade`, with `renames: {"openfang": "fang-upgrade"}` for Claude Code
+2.1.193 and later. Existing users install the new package once:
+
+```text
+/plugin install fang-upgrade@claude-skills
+```
+
+Older Claude versions and Codex users should install `fang-upgrade` explicitly
+and remove the old `openfang` plugin if it is present. The new skill detects its
+actual target; installation does not start a daemon or MCP server. Existing
+standalone `fang-upgrade-skill` clones remain supported.
+
+## Validation
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 templates/plugin-update/test_auto_update.py
+python3 scripts/validate_marketplace.py
+claude plugin validate .
+python3 scripts/validate_marketplace.py --sources --install-smoke --output validation-report.json
+```
+
+The source check verifies visibility, archival status, names, packaged skills,
+hook targets, and absence of the retired cross-plugin updater. Installation smoke
+uses a temporary `CLAUDE_CONFIG_DIR`; it never starts a model, hooks, or MCP server.
+It validates packaging, not the business behavior of each skill.
+
+CI runs on pull requests, main pushes, and daily. Public sources must pass.
+`catalog-policy.json` names the only private-source exceptions. Without a token
+that can read them, CI reports those entries as **private-skipped**, never passed.
+A maintainer's authenticated `gh` can validate all 17 locally. For private checks
+on trusted main/scheduled runs, configure the optional `MARKETPLACE_READ_TOKEN`
+repository secret with read-only access to the listed repositories. It is not
+provided to pull-request code.
+
+Operator workflow: [kyzdes-marketplace/CLAUDE.md](kyzdes-marketplace/CLAUDE.md).
+Each plugin retains its own licensing terms; check its source repository.

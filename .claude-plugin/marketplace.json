@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.18.0"
+        "version": "1.19.0"
     },
     "plugins": [
         {
@@ -90,11 +90,11 @@
             }
         },
         {
-            "name": "openfang",
-            "description": "Operator playbook for OpenFang v0.6.9 — the Rust \"agent operating system\" (CLI + daemon at ~/.openfang). Teaches the daemon lifecycle (foreground start, systemd-oomd trap), the startup-cached model registry (no reload command), agent.toml + capabilities RBAC, providers and the fallback chain, cron/triggers/workflows/hands, ollama embeddings, and a cost-ordered gotchas catalog verified against a live install. Ships 3 slash commands, a read-only diagnose script, and the OpenFang MCP server. Upstream is abandoned at v0.6.9 — every workaround is permanent.",
+            "name": "fang-upgrade",
+            "description": "Operate the maintained fang-upgrade fork of OpenFang v0.6.9: explicit target discovery, daemon lifecycle, agents, hands, schedules, providers, channels, backups, and local operator scripts. Replaces the archived openfang skill.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/openfang-skill.git"
+                "url": "https://github.com/kyzdes/fang-upgrade-skill.git"
             }
         },
         {
@@ -145,5 +145,8 @@
                 "url": "https://github.com/kyzdes/deck-copy-skill.git"
             }
         }
-    ]
+    ],
+    "renames": {
+        "openfang": "fang-upgrade"
+    }
 }
