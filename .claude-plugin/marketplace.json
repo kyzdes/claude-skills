@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.19.0"
+        "version": "1.20.0"
     },
     "plugins": [
         {
@@ -26,14 +26,6 @@
             }
         },
         {
-            "name": "context-map",
-            "description": "Two-layer agent docs: a committed agent-docs/ navigation tree (MAP + per-domain deep docs) and a gitignored context-map-<slug>/ memory tree (decisions, known issues, gotchas, tasks). Generate, decompose, update, audit, reconcile, and conflict-check project docs for AI coding agents — navigation that survives a big codebase plus memory that survives a context reset.",
-            "source": {
-                "source": "url",
-                "url": "https://github.com/kyzdes/context-map-skill.git"
-            }
-        },
-        {
             "name": "trip-planner",
             "description": "Extract flight + hotel data from Aviasales / Ostrovok links and compile into a self-contained HTML itinerary.",
             "source": {
@@ -42,27 +34,11 @@
             }
         },
         {
-            "name": "stitch-design",
-            "description": "Google Stitch AI UI generation — brainstorm, generate, edit, iterate on UI designs from text prompts. Bundles 4 sub-skills (design / theme / edit / upload).",
-            "source": {
-                "source": "url",
-                "url": "https://github.com/kyzdes/claude-stitch-design.git"
-            }
-        },
-        {
             "name": "agentix",
             "description": "Teach AI agents to work safely and efficiently with a remote Agentix tracker over MCP, with REST fallback and live-contract discovery.",
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/agentix-skill.git"
-            }
-        },
-        {
-            "name": "sentryx",
-            "description": "Instrument an app with SentryX over a remote MCP: error tracking + distributed tracing + product analytics/funnels, correlated by trace_id. Connect with an org Bearer token, then onboard a project (detect stack → 5 product questions → create_project → instrument_hint → define funnels → verify get_funnel) and fix bugs (search_issues → prepare_fix_bundle). Ships the full MCP tool reference, per-stack copy-paste snippets, and end-to-end recipes.",
-            "source": {
-                "source": "url",
-                "url": "https://github.com/kyzdes/sentryx-skill.git"
             }
         },
         {
@@ -87,14 +63,6 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/hostbrr-vps-skill.git"
-            }
-        },
-        {
-            "name": "fang-upgrade",
-            "description": "Operate the maintained fang-upgrade fork of OpenFang v0.6.9: explicit target discovery, daemon lifecycle, agents, hands, schedules, providers, channels, backups, and local operator scripts. Replaces the archived openfang skill.",
-            "source": {
-                "source": "url",
-                "url": "https://github.com/kyzdes/fang-upgrade-skill.git"
             }
         },
         {
@@ -145,8 +113,5 @@
                 "url": "https://github.com/kyzdes/deck-copy-skill.git"
             }
         }
-    ],
-    "renames": {
-        "openfang": "fang-upgrade"
-    }
+    ]
 }
