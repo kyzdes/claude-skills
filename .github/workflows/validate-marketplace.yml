@@ -1,59 +1,78 @@
 name: validate-marketplace
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
 permissions:
   contents: read
-
+concurrency:
+  group: marketplace-validation-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Validate marketplace manifest
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Test catalog validator and updater behavior
         run: |
-          python3 - <<'PY'
-          import json
-          import pathlib
-          import re
-          import sys
-
-          path = pathlib.Path('.claude-plugin/marketplace.json')
-          try:
-              data = json.loads(path.read_text(encoding='utf-8'))
-          except (OSError, json.JSONDecodeError) as error:
-              sys.exit(f'error: invalid {path}: {error}')
-
-          if not data.get('name'):
-              sys.exit('error: marketplace name is required')
-          version = data.get('metadata', {}).get('version', '')
-          if not re.fullmatch(r'\d+\.\d+\.\d+', version):
-              sys.exit('error: metadata.version must be semantic x.y.z')
-
-          plugins = data.get('plugins')
-          if not isinstance(plugins, list) or not plugins:
-              sys.exit('error: plugins must be a non-empty list')
-
-          names = []
-          for index, plugin in enumerate(plugins):
-              name = plugin.get('name')
-              description = plugin.get('description')
-              source = plugin.get('source', {})
-              url = source.get('url')
-              if not name or not description:
-                  sys.exit(f'error: plugin {index} requires name and description')
-              if source.get('source') != 'url' or not isinstance(url, str) or not url.startswith('https://github.com/'):
-                  sys.exit(f'error: plugin {name!r} must use an HTTPS GitHub URL source')
-              names.append(name)
-
-          duplicates = sorted({name for name in names if names.count(name) > 1})
-          if duplicates:
-              sys.exit(f'error: duplicate plugin names: {duplicates}')
-          print(f'ok: {len(plugins)} plugins, marketplace version {version}')
-          PY
+          python -m unittest discover -s tests -v
+          python templates/plugin-update/test_auto_update.py
+      - name: Validate local catalog
+        run: python scripts/validate_marketplace.py --output catalog-report.json
+      - name: Install pinned Claude plugin CLI
+        run: npm install --global @anthropic-ai/claude-code@2.1.263
+      - name: Prove plugin installation does not start hooks or MCP servers
+        run: python -m unittest test_marketplace.InstallTests.test_real_cli_does_not_run_hooks_or_mcp -v
+        env:
+          PYTHONPATH: tests
+          MARKETPLACE_CLI_SMOKE_TEST: '1'
+      - name: Validate marketplace schema with Claude CLI
+        run: claude plugin validate .
+      - name: Validate live sources and isolated installs
+        run: python scripts/validate_marketplace.py --sources --install-smoke --allow-private-unavailable --output validation-report.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MARKETPLACE_READ_TOKEN: ${{ github.event_name != 'pull_request' && secrets.MARKETPLACE_READ_TOKEN || '' }}
+      - name: Summarize coverage, including failures and private skips
+        if: always()
+        run: |
+          python - <<'PYTHON'
+          import json, os, pathlib
+          path = pathlib.Path('validation-report.json')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              if not path.exists():
+                  out.write('Live source and install report unavailable; validation did not complete.\n')
+              else:
+                  report = json.loads(path.read_text())
+                  out.write(f"Overall: **{report['overall_status']}**\n\n")
+                  for key, count in report['summary'].items():
+                      out.write(f"- {key}: {count}\n")
+                  out.write('\n| Plugin | Source | Install | Detail |\n|---|---|---|---|\n')
+                  for row in report['sources']:
+                      reason = row.get('reason', row.get('install_reason', '')).replace('|', '\\|').replace('\n', ' ')
+                      out.write(f"| {row['name']} | {row['status']} | {row.get('install_smoke', 'not-run')} | {reason} |\n")
+                  for error in report['errors']:
+                      out.write(f"\nError: {error}\n")
+                  if report['summary']['private_skipped']:
+                      print('::warning::Private repositories were not verified. See the explicit skipped entries; this is partial coverage, not a full pass.')
+          PYTHON
+      - name: Retain machine-readable validation reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: marketplace-validation-reports
+          path: '*-report.json'
+          if-no-files-found: warn
+          retention-days: 14
