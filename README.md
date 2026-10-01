@@ -68,7 +68,9 @@ installation. The fallback requires Python 3.9 or newer.
 - `KKZ_NO_AUTOUPDATE=1` disables these fallback hooks.
 - `KKZ_AUTO_UPDATE_INTERVAL_SEC` controls their success cooldown (default 14400).
 - Keys Keeper's fallback requires `KEYS_KEEPER_ENABLE_MUTABLE_AUTOUPDATE=1`;
-  `KEYS_KEEPER_NO_AUTOUPDATE=1` takes precedence.
+  `KEYS_KEEPER_NO_AUTOUPDATE=1` takes precedence. Its wrapper permits one
+  automatic attempt per rolling 24 hours, including failed attempts. Native
+  host updates and explicit manual updates keep their separate policies.
 - Agentix keeps its own updater, disabled unless `AGENTIX_PLUGIN_AUTO_UPDATE=1`;
   that updater targets only Agentix and uses `AGENTIX_PLUGIN_AUTO_UPDATE_INTERVAL_SEC`.
 - Plugins without an updater use the host's policy or manual updates.
@@ -82,7 +84,7 @@ Increase that version when publishing changes; if it is omitted, the plugin can
 track commits. Git tags alone are not the update policy. See the official
 [versioning rules](https://code.claude.com/docs/en/plugins/host-marketplace#release-a-new-version).
 
-The Keys Keeper entry in this catalog pins version `0.10.0` to a reviewed source
+The Keys Keeper entry in this catalog pins version `0.10.1` to a reviewed source
 commit using `source.sha`. Later repository commits enter the catalog through a
 reviewed pin update. To update this installed plugin explicitly:
 
@@ -101,10 +103,12 @@ codex plugin add keys-keeper@keys-keeper
 
 Keep each plugin's existing enabled or disabled state when updating. Plugin
 updates refresh agent instructions; update the installed `keys` CLI separately
-to apply runtime changes. Version `0.10.0` removes idle encrypted-state rewrites
-and makes automatic project sync run at most once per 24 hours. Manual Sync
-bypasses that automatic cooldown. Vault synchronization remains separate from
-the host's plugin-update policy.
+to apply runtime changes. Version `0.10.1` removes idle Settings polling and
+repeated activity-log parsing. Hidden native panels stop automatic summary
+refreshes, and automatic workers have bounded runtimes. Project sync triggers
+share one automatic attempt per rolling 24 hours; manual Sync and refresh run
+immediately. Vault synchronization remains separate from the host's
+plugin-update policy.
 
 ## Validation
 
