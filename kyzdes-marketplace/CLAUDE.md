@@ -21,6 +21,9 @@ Repository URLs in the manifest are authoritative.
 
 - Preserve marketplace name `claude-skills` and existing plugin identifiers.
 - Use full HTTPS GitHub URLs: `{"source":"url","url":"https://github.com/owner/repo.git"}`.
+- Keys Keeper uses a reviewed immutable `source.sha` pin. Resolve the full
+  40-character commit SHA after source publication and passing source CI;
+  validate its packaged manifest and update the pin through the catalog PR.
 - Match the catalog name to `.claude-plugin/plugin.json` in the source repository.
   The install identifier is **plugin-name@marketplace-name**.
 - Package skill entry points under `skills/<name>/SKILL.md` with their relative

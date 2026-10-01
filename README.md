@@ -33,7 +33,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 
 | Plugin | Purpose | Repository |
 |---|---|---|
-| **keys-keeper** | Route secret values to explicit local sinks without printing plaintext in normal agent tool output. This reduces accidental disclosure; it does not isolate secrets from arbitrary code running as the same OS user. | [source](https://github.com/kyzdes/keys-keeper-skill) |
+| **keys-keeper** | Route secret values to explicit local sinks without printing plaintext in normal agent tool output. Background project sync runs at most once per 24 hours; manual Sync runs immediately. This reduces accidental disclosure; it does not isolate secrets from arbitrary code running as the same OS user. | [source](https://github.com/kyzdes/keys-keeper-skill) |
 | **ux-planner** | Turn a product description into a structured UX specification. | [source](https://github.com/kyzdes/ux-planner-skill) |
 | **trip-planner** | Build a travel itinerary from flight and hotel sources. | [source](https://github.com/kyzdes/trip-planner-skill) |
 | **agentix** | Work with a remote Agentix issue tracker using live-contract discovery. | [source](https://github.com/kyzdes/agentix-skill) |
@@ -81,6 +81,30 @@ A plugin's `plugin.json` version controls whether a new cached copy is installed
 Increase that version when publishing changes; if it is omitted, the plugin can
 track commits. Git tags alone are not the update policy. See the official
 [versioning rules](https://code.claude.com/docs/en/plugins/host-marketplace#release-a-new-version).
+
+The Keys Keeper entry in this catalog pins version `0.10.0` to a reviewed source
+commit using `source.sha`. Later repository commits enter the catalog through a
+reviewed pin update. To update this installed plugin explicitly:
+
+```bash
+claude plugin marketplace update claude-skills
+claude plugin update keys-keeper@claude-skills --scope user
+```
+
+The separate Codex marketplace named `keys-keeper` uses the source repository's
+own packaged Codex plugin. Existing users of that identifier update it with:
+
+```bash
+codex plugin marketplace upgrade keys-keeper
+codex plugin add keys-keeper@keys-keeper
+```
+
+Keep each plugin's existing enabled or disabled state when updating. Plugin
+updates refresh agent instructions; update the installed `keys` CLI separately
+to apply runtime changes. Version `0.10.0` removes idle encrypted-state rewrites
+and makes automatic project sync run at most once per 24 hours. Manual Sync
+bypasses that automatic cooldown. Vault synchronization remains separate from
+the host's plugin-update policy.
 
 ## Validation
 
