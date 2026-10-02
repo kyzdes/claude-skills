@@ -4,6 +4,9 @@
 
 - Update the immutable Keys Keeper source pin from 0.10.1 to 0.11.0. The plugin
   descriptor and runtime version are owned by its source repository.
+- Include the deterministic journal reauthentication test correction. Its
+  complete matrix passes 1,451 collected cases; released runtime bytes and
+  the immutable 0.11.0 tag/wheel are unchanged.
 - Keys Keeper bounds automatic lock waits and worker descendants, HTTP handler
   admission and request input, native bridge deliveries, and audit-log scans.
   Its file and replica backends authenticate fresh ciphertext with a single
