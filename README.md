@@ -84,7 +84,7 @@ Increase that version when publishing changes; if it is omitted, the plugin can
 track commits. Git tags alone are not the update policy. See the official
 [versioning rules](https://code.claude.com/docs/en/plugins/host-marketplace#release-a-new-version).
 
-The Keys Keeper entry in this catalog pins version `0.10.1` to a reviewed source
+The Keys Keeper entry in this catalog pins version `0.11.0` to a reviewed source
 commit using `source.sha`. Later repository commits enter the catalog through a
 reviewed pin update. To update this installed plugin explicitly:
 
@@ -103,12 +103,16 @@ codex plugin add keys-keeper@keys-keeper
 
 Keep each plugin's existing enabled or disabled state when updating. Plugin
 updates refresh agent instructions; update the installed `keys` CLI separately
-to apply runtime changes. Version `0.10.1` removes idle Settings polling and
-repeated activity-log parsing. Hidden native panels stop automatic summary
-refreshes, and automatic workers have bounded runtimes. Project sync triggers
-share one automatic attempt per rolling 24 hours; manual Sync and refresh run
-immediately. Vault synchronization remains separate from the host's
-plugin-update policy.
+to apply runtime changes. Version `0.11.0` bounds automatic lock waits, worker
+descendants, HTTP request input, native bridge deliveries and activity-log
+scans. File and replica backends authenticate fresh ciphertext while retaining
+one current derived key inside the process; unchanged file mutations perform
+no encryption or payload writes. Damaged account registries and deleted
+WebVault accounts fail closed. Hidden native panels stop automatic summary
+refreshes. Project sync triggers continue to share one automatic attempt per
+rolling 24 hours; manual Sync and refresh run immediately. Encryption formats
+and PBKDF2 iteration counts are unchanged. Vault synchronization remains
+separate from the host's plugin-update policy.
 
 ## Validation
 
