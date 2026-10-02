@@ -8,6 +8,9 @@
   Multiline credentials, trailing newlines, Unicode and literal hex strings
   are read without guessing whether an unmarked value is hex-encoded. Stored
   items and Keychain ACLs are unchanged.
+- Require explicit `apple-tool:` authorization in a legacy item's partition
+  policy before starting the fixed `security` helper. Unsupported items fail
+  closed without spawning that helper or waiting for its timeout.
 - Clarify the credential stop rule: stop the failed credential operation after
   one failed authorization attempt, while permitting metadata-only and local
   format/configuration diagnostics. Retry access only after a confirmed repair

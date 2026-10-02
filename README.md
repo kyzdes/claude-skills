@@ -95,8 +95,10 @@ claude plugin update keys-keeper@claude-skills --scope user
 
 Keys Keeper `0.11.1` preserves multiline credentials, trailing newlines,
 Unicode and literal hex strings when reading legacy macOS Keychain items.
-It also clarifies that a failed credential
-operation stops after one failed authorization attempt: metadata-only and
+For items with a partition policy, the legacy fallback requires explicit
+`apple-tool:` authorization before starting the fixed `security` helper.
+It also clarifies that a failed credential operation stops after one failed
+authorization attempt: metadata-only and
 local format/configuration diagnostics may continue, and another access
 attempt requires a confirmed repair or explicit user direction. Stored items
 and Keychain ACLs are unchanged.
