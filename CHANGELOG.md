@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.24.0] — 2026-10-02
+
+- Update the immutable Keys Keeper source pin to 0.11.1: legacy macOS Keychain
+  reads preserve the original UTF-8 bytes using the explicitly framed
+  `security -g` representation.
+  Multiline credentials, trailing newlines, Unicode and literal hex strings
+  are read without guessing whether an unmarked value is hex-encoded. Stored
+  items and Keychain ACLs are unchanged.
+- Clarify the credential stop rule: stop the failed credential operation after
+  one failed authorization attempt, while permitting metadata-only and local
+  format/configuration diagnostics. Retry access only after a confirmed repair
+  or explicit user direction.
+- Keep the other 12 entries, shared updater templates, catalog policy and
+  native host update policy unchanged. Runtime fixes require a separate
+  installed CLI update.
+
 ## [1.23.0] — 2026-10-02
 
 - Update the immutable Keys Keeper source pin from 0.10.1 to 0.11.0. The plugin

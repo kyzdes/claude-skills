@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.23.0"
+        "version": "1.24.0"
     },
     "plugins": [
         {
@@ -15,7 +15,7 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/keys-keeper-skill.git",
-                "sha": "a8aa4ddfacdae632f32e6c37f0ab2bb01c1e5591"
+                "sha": "cd6e87b553f3135d05f47ba49ab3cbc24d743c6c"
             }
         },
         {

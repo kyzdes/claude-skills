@@ -84,7 +84,7 @@ Increase that version when publishing changes; if it is omitted, the plugin can
 track commits. Git tags alone are not the update policy. See the official
 [versioning rules](https://code.claude.com/docs/en/plugins/host-marketplace#release-a-new-version).
 
-The Keys Keeper entry in this catalog pins version `0.11.0` to a reviewed source
+The Keys Keeper entry in this catalog pins version `0.11.1` to a reviewed source
 commit using `source.sha`. Later repository commits enter the catalog through a
 reviewed pin update. To update this installed plugin explicitly:
 
@@ -92,6 +92,14 @@ reviewed pin update. To update this installed plugin explicitly:
 claude plugin marketplace update claude-skills
 claude plugin update keys-keeper@claude-skills --scope user
 ```
+
+Keys Keeper `0.11.1` preserves multiline credentials, trailing newlines,
+Unicode and literal hex strings when reading legacy macOS Keychain items.
+It also clarifies that a failed credential
+operation stops after one failed authorization attempt: metadata-only and
+local format/configuration diagnostics may continue, and another access
+attempt requires a confirmed repair or explicit user direction. Stored items
+and Keychain ACLs are unchanged.
 
 The separate Codex marketplace named `keys-keeper` uses the source repository's
 own packaged Codex plugin. Existing users of that identifier update it with:
