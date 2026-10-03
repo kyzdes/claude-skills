@@ -11,12 +11,13 @@
     "plugins": [
         {
             "name": "keys-keeper",
-            "description": "Cross-platform secrets workflow for macOS, Windows, and Linux. The `keys` CLI routes values to explicit local sinks without returning plaintext in normal agent tool output. It also organizes local folders and explicit project scopes so approved workers receive only assigned entries and contributors can submit new entries without editing existing ones. This reduces accidental transcript exposure; it is not an isolation boundary against arbitrary code running as the same OS user.",
+            "description": "Cross-platform secrets workflow for macOS, Windows, and Linux. The `keys` CLI routes values to explicit local sinks without returning plaintext in normal agent tool output. Includes profile-aware SSH guidance and avoids rewriting unchanged catalogs during idle sync. It also organizes local folders and explicit project scopes so approved workers receive only assigned entries and contributors can submit new entries without editing existing ones. This reduces accidental transcript exposure; it is not an isolation boundary against arbitrary code running as the same OS user.",
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/keys-keeper-skill.git",
-                "sha": "1eb6cf3e0339a7130dbb13a9d1dfe3c48a52f7f4"
-            }
+                "sha": "fbd37cd053735237deec6109876db9b00ebd512a"
+            },
+            "version": "0.13.0"
         },
         {
             "name": "ux-planner",
