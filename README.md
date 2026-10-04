@@ -1,6 +1,6 @@
 # kyzdes / claude-skills
 
-A personal marketplace of 13 plugins for Claude Code. Codex can also read this
+A personal marketplace of 14 plugins for Claude Code. Codex can also read this
 catalog; compatibility depends on each plugin's packaged skills and integrations.
 The canonical catalog is `.claude-plugin/marketplace.json`.
 
@@ -13,8 +13,8 @@ Claude Code:
 /plugin install clarity@claude-skills
 ```
 
-Replace `clarity` with a plugin name from the table. `model-to-bot` and `aso`
-require access to their private repositories; adding the public catalog does not
+Replace `clarity` with a plugin name from the table. `model-to-bot`, `aso`, and
+`agent-access` require access to their private repositories; adding the public catalog does not
 grant that access.
 
 Codex CLI:
@@ -45,7 +45,14 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **opencode-provider-auditor** | Inspect and configure OpenAI-compatible providers in OpenCode. | [source](https://github.com/kyzdes/opencode-provider-auditor) |
 | **aso** | Research and improve App Store listings. Private repository; access required. | [source](https://github.com/kyzdes/aso-skill) |
 | **research-engine** | Build a source-backed research knowledge base and methodology. | [source](https://github.com/kyzdes/research-engine-skill) |
+| **agent-access** | Shared 1Password API, SSH and env operations, plus credential saving, organization and comments. Requires a separately configured machine-access runtime; writes require Connect WRITE. Private repository; owner access required. | [source](https://github.com/kyzdes/agent-access) |
 | **deck-copy** | Write and revise presentation text for its audience and delivery format. | [source](https://github.com/kyzdes/deck-copy-skill) |
+
+Agent Access is available as `agent-access@claude-skills`. Its Marketplace package
+uses an existing runtime under `AGENT_ACCESS_HOME` or `~/.local/share/agent-access`;
+installation does not provision credentials or change client approval settings.
+Existing `agent-access@agent-access-local` installations can keep using that
+identifier. Enable one installation at a time to avoid duplicate MCP servers.
 
 ## Updates and controls
 
@@ -142,7 +149,7 @@ It validates packaging, not the business behavior of each skill.
 CI runs on pull requests, main pushes, and daily. Public sources must pass.
 `catalog-policy.json` names the only private-source exceptions. Without a token
 that can read them, CI reports those entries as **private-skipped**, never passed.
-A maintainer's authenticated `gh` can validate all 13 locally. For private checks
+A maintainer's authenticated `gh` can validate all 14 locally. For private checks
 on trusted main/scheduled runs, configure the optional `MARKETPLACE_READ_TOKEN`
 repository secret with read-only access to the listed repositories. It is not
 provided to pull-request code.
