@@ -1,7 +1,8 @@
 {
   "private_repositories": [
     "kyzdes/model-to-bot",
-    "kyzdes/aso-skill"
+    "kyzdes/aso-skill",
+    "kyzdes/agent-access"
   ],
   "shared_updater_plugins": [
     "keys-keeper",

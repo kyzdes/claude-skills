@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.24.0"
+        "version": "1.25.0"
     },
     "plugins": [
         {
@@ -113,6 +113,15 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/deck-copy-skill.git"
+            }
+        },
+        {
+            "name": "agent-access",
+            "description": "Shared 1Password development access for trusted agents: API requests, SSH, environment execution, credential saving, organization and comments. Uses a separately configured local machine-access runtime; writes require Connect WRITE. Private repository; owner access required.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/agent-access.git",
+                "sha": "977ac2cc5d8e95b593a706c0c48e53908be710c8"
             }
         }
     ]

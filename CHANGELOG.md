@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.25.0] — 2026-10-04
+
+- Add Agent Access from its private source repository, with packaged Claude and
+  Codex skills and MCP configuration for an existing local machine-access runtime.
+- Include API, SSH and env operations plus credential saving, organization and
+  annotations. Runtime provisioning and Connect WRITE activation are separate.
+- Explicitly allow the private source in catalog policy; CI reports it as skipped
+  when its credentials cannot read that repository.
+- Preserve the existing 13 entries, source pins and installed plugin states.
+
 ## [1.24.0] — 2026-10-02
 
 - Update the immutable Keys Keeper source pin to 0.11.1: legacy macOS Keychain
