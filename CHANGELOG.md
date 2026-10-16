@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.26.0] — 2026-10-16
+
+- Add Deck Studio from its public source repository: a single-file HTML
+  presentation engine with a morphing particle field, 20 tested layouts, CSS
+  theme tokens with three palettes, presenter window, and scripts to start,
+  check and build a deck, plus references for the whole path from brief and
+  Mobbin moodboard to delivery.
+- The plugin ships the reviewed shared updater byte-for-byte; add it to
+  `shared_updater_plugins` in catalog policy.
+- Preserve the existing 14 entries, source pins and installed plugin states.
+
 ## [1.25.0] — 2026-10-04
 
 - Add Agent Access from its private source repository, with packaged Claude and

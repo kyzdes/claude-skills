@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.25.0"
+        "version": "1.26.0"
     },
     "plugins": [
         {
@@ -122,6 +122,14 @@
                 "source": "url",
                 "url": "https://github.com/kyzdes/agent-access.git",
                 "sha": "977ac2cc5d8e95b593a706c0c48e53908be710c8"
+            }
+        },
+        {
+            "name": "deck-studio",
+            "description": "Анимированные HTML-презентации одним файлом: сцена 1920×1080 и поле из 1800 частиц, которое на каждом слайде складывается в новую фигуру, заголовки по словам, шаги по клику, окно спикера с таймером и заметками, работает без интернета. Весь путь от брифа до сцены: мудборд по Mobbin с тремя живыми направлениями, сюжет и тексты вместе с deck-copy, каталог из 20 проверенных макетов, свои фигуры из частиц, проверка скриптом и скриншотами. Отличие от deck-copy: тот пишет текст деки, этот собирает саму деку. Файлы .pptx и Keynote — вне периметра.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/deck-studio-skill.git"
             }
         }
     ]
