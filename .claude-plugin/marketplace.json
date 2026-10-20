@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.26.0"
+        "version": "1.27.0"
     },
     "plugins": [
         {
@@ -16,15 +16,15 @@
                 "source": "url",
                 "url": "https://github.com/kyzdes/keys-keeper-skill.git",
                 "sha": "fbd37cd053735237deec6109876db9b00ebd512a"
-            },
-            "version": "0.13.0"
+            }
         },
         {
             "name": "ux-planner",
             "description": "Turn loose product descriptions into structured English UX Specs ready for handoff to a visual-design agent.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/ux-planner-skill.git"
+                "url": "https://github.com/kyzdes/ux-planner-skill.git",
+                "sha": "590b96d3bac915cac2ee1ef68c76ccc40c767bcf"
             }
         },
         {
@@ -32,7 +32,8 @@
             "description": "Extract flight + hotel data from Aviasales / Ostrovok links and compile into a self-contained HTML itinerary.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/trip-planner-skill.git"
+                "url": "https://github.com/kyzdes/trip-planner-skill.git",
+                "sha": "060836886a050f98f026406980cfec1d7f10a947"
             }
         },
         {
@@ -40,7 +41,8 @@
             "description": "Teach AI agents to work safely and efficiently with a remote Agentix tracker over MCP, with REST fallback and live-contract discovery.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/agentix-skill.git"
+                "url": "https://github.com/kyzdes/agentix-skill.git",
+                "sha": "2441cb4e8d14194d06251a4a77a7131f59009538"
             }
         },
         {
@@ -48,7 +50,8 @@
             "description": "Build a polished, production Telegram bot around a model / HF Space / API — a 7-phase playbook (Discover→Design→Menus→Data→Backend→Build→Deploy), a 32-entry gotchas catalog, and real starter module templates. (Private repo — installs for the owner.)",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/model-to-bot.git"
+                "url": "https://github.com/kyzdes/model-to-bot.git",
+                "sha": "d72db7685a4bf97e52e0dcfb1c4e9a98f335fb52"
             }
         },
         {
@@ -56,7 +59,8 @@
             "description": "Agent-native VPS deploy/ops over Dokploy — one command from a GitHub repo to a running app with SSL + auto-deploy, plus a local dashboard for servers, databases, domains, and logs. Deploys via a two-phase worker: a read-only pass analyzes the untrusted repo into a validated manifest, then infra is actuated from that manifest under a plan-then-confirm gate; destroy is guarded by a server-minted single-use nonce. Local, single-user (macOS/Linux).",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/dokpilot.git"
+                "url": "https://github.com/kyzdes/dokpilot.git",
+                "sha": "d2e86f3bcaf8770b89e27481e99be789bce4f6e3"
             }
         },
         {
@@ -64,7 +68,8 @@
             "description": "Manage HostBRR VPS via the VirtFusion REST API — list servers, rebuild/reinstall the OS, power actions (restart/boot/shutdown/powerOff), SSH keys, ISO, VNC, rescue, resource packs, task polling. Teaches the correct client API base path (/api, not /api/v1), Bearer auth kept out of the transcript, and the FQDN-hostname rebuild rule. Ships the full endpoint reference.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/hostbrr-vps-skill.git"
+                "url": "https://github.com/kyzdes/hostbrr-vps-skill.git",
+                "sha": "7ebe86b49004336f867b27215d23132eedd94a13"
             }
         },
         {
@@ -72,7 +77,8 @@
             "description": "Правка русских рабочих текстов до чёткой и ёмкой речи: диагноз → 14 законов (деятель в подлежащее, номинализации → глаголы, вложенность вместо длины, шесть операций сжатия, селективные стоп-слова) → линт со словарями → тон-чек. Синтез 6 верифицированных deep-research исследований школ ясности (Williams, Оруэлл/Zinsser, Пинкер, Чуковский/Галь, инфостиль, психолингвистика); лечит и канцелярит, и AI-звучание; опровергнутые мифы — в чёрном списке.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/clarity-skill.git"
+                "url": "https://github.com/kyzdes/clarity-skill.git",
+                "sha": "8989120244acc34f8c527276273109168877a6a0"
             }
         },
         {
@@ -80,7 +86,8 @@
             "description": "Make Tailscale reach peers while a global-tunnel VPN client (Shadowrocket, Hiddify, sing-box, Clash/Mihomo, NekoBox) is ON, on macOS or Ubuntu/Linux. Diagnoses the two independent failure layers — OS routing (100.64.0.0/10 hijacked by the VPN TUN) and the system HTTP proxy (*.ts.net swallowed) — and applies persistent fixes (route-keeper + skip-proxy), plus optional `tailscale serve` for a clean HTTPS name. Teaches the ordered diagnosis (tailscale ping -> route get -> real SSH-banner check, not the lying nc -z -> proxy layer) and ships a full macOS+Linux playbook.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/tailscale-vpn-coexist-skill.git"
+                "url": "https://github.com/kyzdes/tailscale-vpn-coexist-skill.git",
+                "sha": "c77f8e33776822ccdad91dabae2655592bbaa99d"
             }
         },
         {
@@ -88,7 +95,8 @@
             "description": "Safely onboard OpenAI-compatible routers into OpenCode: discover every advertised model, dry-run bounded capability probes, verify availability, tool calling, reasoning, streaming and JSON mode, calculate test cost, and apply a secret-free configuration with backup and rollback.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/opencode-provider-auditor.git"
+                "url": "https://github.com/kyzdes/opencode-provider-auditor.git",
+                "sha": "dbef50bca4ca8e9b542a91aeeb72bf31480974c9"
             }
         },
         {
@@ -96,7 +104,8 @@
             "description": "Движок работы с листингом App Store (iOS/iPadOS): строит листинг с нуля из кодовой базы или продуктового описания и аудирует существующий по приоритету эффекта — семантика и укладка ключей в 160 индексируемых символов на локаль, метаданные по 175 странам, тексты полей, ТЗ на иконку и скриншоты, рейтинг и отзывы как рычаг, PPO с расчётом выборки до старта, линтер из 60+ правил. Синтез 13 верифицированных deep-research отчётов: каждое число едет с выборкой, носителем, датой и URL, вендорские медианы дисконтируются по чистоте замера, опровергнутые приёмы вынесены в чёрный список. Русский слой собран заново, а не переведён: измеренная морфология и корпус живых RU-запросов. Только App Store — Google Play, RuStore и AppGallery вне периметра. (Приватный репозиторий — ставится владельцу.)",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/aso-skill.git"
+                "url": "https://github.com/kyzdes/aso-skill.git",
+                "sha": "2b459420ed0b7baca85d2514afbb2a8a57135ad4"
             }
         },
         {
@@ -104,7 +113,8 @@
             "description": "Собирает по любой теме верифицированную базу знаний и методику поверх неё: тема режется на 5–16 ТЗ, на каждое агент пишет полный отчёт, следом верификатор перепроверяет нагруженные числа по первоисточникам и достраивает отчёт, затем строятся своды, банк фактов с провенансом, критик полноты и METHOD.md. Закон конвейера: ни один шаг не сжимает содержание. Работает в Claude Code (Workflow-исполнители) и в Codex (портируемый раннер поверх codex exec); файлы задач на диске одни и те же для обоих хостов. Ships engine-init, render-tasks, fanout, audit и build-index.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/research-engine-skill.git"
+                "url": "https://github.com/kyzdes/research-engine-skill.git",
+                "sha": "1656d8608218b63d6cc6fa705fc896c5755475d5"
             }
         },
         {
@@ -112,7 +122,8 @@
             "description": "Тексты презентаций по жанровым пресетам: сначала решается носитель (деку произносят, читают без спикера или и то и другое) — он задаёт бюджет слов на слайд, — дальше пресет из шести, скелет проходит titles-test, тело пишется по четырнадцати законам ядра и линтуется по правилам с id. Каждое измеримое утверждение сверено с первоисточником в паспорте цифр. Отличие от clarity: тот доводит до ясности любую русскую прозу, этот пишет текст деки по жанру. Вёрстка, графика и перевод — вне периметра.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/deck-copy-skill.git"
+                "url": "https://github.com/kyzdes/deck-copy-skill.git",
+                "sha": "cb0cf08f01092cd6e56b071bc468b6ca5fa86923"
             }
         },
         {
@@ -129,7 +140,8 @@
             "description": "Анимированные HTML-презентации одним файлом: сцена 1920×1080 и поле из 1800 частиц, которое на каждом слайде складывается в новую фигуру, заголовки по словам, шаги по клику, окно спикера с таймером и заметками, работает без интернета. Весь путь от брифа до сцены: мудборд по Mobbin с тремя живыми направлениями, сюжет и тексты вместе с deck-copy, каталог из 20 проверенных макетов, свои фигуры из частиц, проверка скриптом и скриншотами. Отличие от deck-copy: тот пишет текст деки, этот собирает саму деку. Файлы .pptx и Keynote — вне периметра.",
             "source": {
                 "source": "url",
-                "url": "https://github.com/kyzdes/deck-studio-skill.git"
+                "url": "https://github.com/kyzdes/deck-studio-skill.git",
+                "sha": "3a64b3f4d6f91b9b38728b27ea7bb5d83ceef9c3"
             }
         }
     ]

@@ -5,6 +5,7 @@ import importlib.util
 import io
 import json
 import os
+import re
 import shlex
 import shutil
 from pathlib import Path
@@ -73,6 +74,17 @@ class CatalogTests(Fixture):
         self.entry["source"]["headersHelper"] = "touch /tmp/never"
         with self.assertRaises(ValueError):
             validator.validate_catalog(self.catalog, self.policy)
+
+    def test_pin_outside_source_rejected(self):
+        self.entry["sha"] = SHA
+        with self.assertRaisesRegex(ValueError, "belong inside source"):
+            validator.validate_catalog(self.catalog, self.policy)
+
+    def test_readme_table_matches_catalog(self):
+        root = Path(__file__).resolve().parents[1]
+        catalog = json.loads((root / ".claude-plugin/marketplace.json").read_text(encoding="utf-8"))
+        table = re.findall(r"^\| \*\*([a-z0-9-]+)\*\*", (root / "README.md").read_text(encoding="utf-8"), re.M)
+        self.assertEqual(sorted(table), sorted(p["name"] for p in catalog["plugins"]))
 
     def test_private_allowlist_cannot_hide_unknown_repo(self):
         self.policy["private_repositories"] = ["kyzdes/unknown"]

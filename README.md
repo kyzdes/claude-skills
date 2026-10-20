@@ -25,7 +25,10 @@ codex plugin list --marketplace claude-skills --available --json
 codex plugin add clarity@claude-skills
 ```
 
-`clarity`, `research-engine`, and `deck-copy` have verified Codex installations.
+`agentix`, `clarity`, `aso`, `research-engine`, `agent-access`, `deck-copy`, and
+`deck-studio` ship a `.codex-plugin/plugin.json`. `keys-keeper` and
+`opencode-provider-auditor` have separate Codex marketplaces. The other plugins
+are listed, but Codex support is not confirmed.
 This does not certify every plugin's MCP server or hook on both hosts.
 Open a new Codex task after changing installed plugins so it picks up the new skills.
 
@@ -92,24 +95,15 @@ Increase that version when publishing changes; if it is omitted, the plugin can
 track commits. Git tags alone are not the update policy. See the official
 [versioning rules](https://code.claude.com/docs/en/plugins/host-marketplace#release-a-new-version).
 
-The Keys Keeper entry in this catalog pins version `0.11.1` to a reviewed source
-commit using `source.sha`. Later repository commits enter the catalog through a
-reviewed pin update. To update this installed plugin explicitly:
+Every catalog entry is pinned to a reviewed commit with `source.sha`. Later
+commits in a plugin repository reach users only through a catalog PR that moves
+the pin. Release notes stay in the plugin's own repository. To update an
+installed plugin explicitly:
 
 ```bash
 claude plugin marketplace update claude-skills
 claude plugin update keys-keeper@claude-skills --scope user
 ```
-
-Keys Keeper `0.11.1` preserves multiline credentials, trailing newlines,
-Unicode and literal hex strings when reading legacy macOS Keychain items.
-For items with a partition policy, the legacy fallback requires explicit
-`apple-tool:` authorization before starting the fixed `security` helper.
-It also clarifies that a failed credential operation stops after one failed
-authorization attempt: metadata-only and
-local format/configuration diagnostics may continue, and another access
-attempt requires a confirmed repair or explicit user direction. Stored items
-and Keychain ACLs are unchanged.
 
 The separate Codex marketplace named `keys-keeper` uses the source repository's
 own packaged Codex plugin. Existing users of that identifier update it with:
@@ -121,16 +115,8 @@ codex plugin add keys-keeper@keys-keeper
 
 Keep each plugin's existing enabled or disabled state when updating. Plugin
 updates refresh agent instructions; update the installed `keys` CLI separately
-to apply runtime changes. Version `0.11.0` bounds automatic lock waits, worker
-descendants, HTTP request input, native bridge deliveries and activity-log
-scans. File and replica backends authenticate fresh ciphertext while retaining
-one current derived key inside the process; unchanged file mutations perform
-no encryption or payload writes. Damaged account registries and deleted
-WebVault accounts fail closed. Hidden native panels stop automatic summary
-refreshes. Project sync triggers continue to share one automatic attempt per
-rolling 24 hours; manual Sync and refresh run immediately. Encryption formats
-and PBKDF2 iteration counts are unchanged. Vault synchronization remains
-separate from the host's plugin-update policy.
+to apply runtime changes. Vault synchronization remains separate from the host's
+plugin-update policy.
 
 ## Validation
 
@@ -155,5 +141,6 @@ on trusted main/scheduled runs, configure the optional `MARKETPLACE_READ_TOKEN`
 repository secret with read-only access to the listed repositories. It is not
 provided to pull-request code.
 
-Operator workflow: [kyzdes-marketplace/CLAUDE.md](kyzdes-marketplace/CLAUDE.md).
+Operator workflow: [CLAUDE.md](CLAUDE.md). Architecture:
+[kyzdes-marketplace/topology.md](kyzdes-marketplace/topology.md).
 Each plugin retains its own licensing terms; check its source repository.

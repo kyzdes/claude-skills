@@ -51,6 +51,8 @@ def validate_catalog(data, policy):
         names.add(name)
         if not isinstance(item.get("description"), str) or not item["description"].strip():
             raise ValueError("missing description: " + name)
+        if {"sha", "ref"} & set(item):
+            raise ValueError("sha and ref belong inside source: " + name)
         source = item.get("source", {})
         if not isinstance(source, dict) or not isinstance(source.get("url"), str):
             raise ValueError("source must be a full HTTPS GitHub .git URL: " + name)

@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.27.0] — 2026-10-20
+
+- Pin the 13 remaining entries to their current source commits with
+  `source.sha`. Every entry is now pinned, so a push to a plugin repository no
+  longer reaches users without a catalog PR. The pins are the default-branch
+  commits at this date; they were not individually audited.
+- Drop the duplicate `version` field from the Keys Keeper entry; its
+  `plugin.json` owns the version. Between 1.24.0 and 1.25.0 its pin moved from
+  0.11.1 through 0.12.1 to 0.13.0 (`fbd37cd`) without a catalog version bump or
+  changelog entry; this entry records it.
+- The validator rejects `sha` or `ref` placed beside `source`, and a test keeps
+  the README table in step with the catalog.
+- Move the operator runbook to `CLAUDE.md` in the repository root so agents
+  load it, and remove the redirect README. Trim stale Keys Keeper notes and fix
+  the Codex plugin list in the README.
+- Ignore `__pycache__/` and `*-report.json`. Update the pinned GitHub Actions to
+  releases that run on Node 24.
+- Preserve the existing 15 entries and installed plugin states.
+
 ## [1.26.0] — 2026-10-16
 
 - Add Deck Studio from its public source repository: a single-file HTML
