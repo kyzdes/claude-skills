@@ -17,6 +17,9 @@
   the Codex plugin list in the README.
 - Ignore `__pycache__/` and `*-report.json`. Update the pinned GitHub Actions to
   releases that run on Node 24.
+- Move Deck Studio from `3a64b3f` (0.2) to `5ea0d94` (0.2.2): it brings the
+  0.2.1 audit fixes and the `particles: false` option that turns the particle
+  field off for strict brand themes. Source CI passed on that commit.
 - Preserve the existing 15 entries and installed plugin states.
 
 ## [1.26.0] — 2026-10-16
