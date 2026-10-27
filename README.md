@@ -50,7 +50,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **research-engine** | Build a source-backed research knowledge base and methodology. | [source](https://github.com/kyzdes/research-engine-skill) |
 | **agent-access** | Shared 1Password API, SSH and env operations, plus credential saving, organization and comments. Requires a separately configured machine-access runtime; writes require Connect WRITE. Private repository; owner access required. | [source](https://github.com/kyzdes/agent-access) |
 | **deck-copy** | Write and revise presentation text for its audience and delivery format. | [source](https://github.com/kyzdes/deck-copy-skill) |
-| **deck-studio** | Build an animated single-file HTML presentation with a morphing particle field, from moodboard and story to a verified, offline deck with presenter notes. | [source](https://github.com/kyzdes/deck-studio-skill) |
+| **deck-studio** | Build an animated single-file HTML presentation with a morphing particle field or a light corporate grid style, from moodboard and story to a verified, offline deck with presenter notes. | [source](https://github.com/kyzdes/deck-studio-skill) |
 
 Agent Access is available as `agent-access@claude-skills`. Its Marketplace package
 uses an existing runtime under `AGENT_ACCESS_HOME` or `~/.local/share/agent-access`;
