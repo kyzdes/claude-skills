@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.29.0] — 2026-10-27
+
+- Add op-agent-vault-windows (0.1.0, `eddc99e`) from its public source
+  repository: a Windows-only setup that lets every agent read and write one
+  dedicated 1Password vault through a service account, with no password,
+  Windows Hello or approval prompts. It ships Claude Code and Codex manifests.
+- Preserve the existing 15 entries and installed plugin states.
+
 ## [1.28.0] — 2026-10-27
 
 - Move Deck Studio from `5ea0d94` (0.2.2) to `6ab728b` (0.3.0): it adds the

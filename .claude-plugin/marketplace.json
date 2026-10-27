@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.28.0"
+        "version": "1.29.0"
     },
     "plugins": [
         {
@@ -142,6 +142,15 @@
                 "source": "url",
                 "url": "https://github.com/kyzdes/deck-studio-skill.git",
                 "sha": "6ab728b6ba68fb37cee0060b2c5ac2e58c57f722"
+            }
+        },
+        {
+            "name": "op-agent-vault-windows",
+            "description": "Windows only: give every AI agent (Claude Code, Codex, Hermes, any shell) read and write access to one dedicated 1Password vault through a service account, with no password, Windows Hello or approval prompts. Persistent user env token, Claude Code permission and auto-mode rules, shared agent rules, and a create/edit/delete check. Other vaults stay protected. Unlike agent-access, it needs no Connect server or separate runtime.",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/op-agent-vault-windows-skill.git",
+                "sha": "eddc99eaed3a2ecb4c3445c6398fc8477945ee69"
             }
         }
     ]
