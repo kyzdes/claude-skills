@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.28.0] — 2026-10-27
+
+- Move Deck Studio from `5ea0d94` (0.2.2) to `6ab728b` (0.3.0): it adds the
+  «Сетка» style, a light corporate deck without the particle field (visible
+  grid, mono labels, corner-marked cells, mosaic and vector animations,
+  16 layouts), started with `new_deck.py --style grid`. The style ships no
+  brand fonts or logos.
+- Preserve the existing 15 entries and installed plugin states.
+
 ## [1.27.0] — 2026-10-20
 
 - Pin the 13 remaining entries to their current source commits with
