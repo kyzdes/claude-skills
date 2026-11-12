@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.29.0"
+        "version": "1.30.0"
     },
     "plugins": [
         {
@@ -42,7 +42,7 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/agentix-skill.git",
-                "sha": "2441cb4e8d14194d06251a4a77a7131f59009538"
+                "sha": "214a9f28fa037d55137fca43aa985f56c3799946"
             }
         },
         {
