@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.31.0] — 2026-11-12
+
+- Add agentix-notes (0.1.0, `bd07da9`) from its private source repository: one
+  shared skill for Claude Code and Codex that explains the Agentix Notes MCP
+  server — projects, sourced notes, freshness and history, databases, files,
+  limits and the 35-tool map. It ships no MCP server, hook or credential.
+- Preserve the existing 16 entries and installed plugin states.
+
 ## [1.30.0] — 2026-11-12
 
 - Move Agentix from `2441cb4` (0.5.0) to `214a9f2` (0.6.0): the skill now

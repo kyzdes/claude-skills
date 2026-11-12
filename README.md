@@ -25,7 +25,7 @@ codex plugin list --marketplace claude-skills --available --json
 codex plugin add clarity@claude-skills
 ```
 
-`agentix`, `clarity`, `aso`, `research-engine`, `agent-access`, `deck-copy`,
+`agentix`, `agentix-notes`, `clarity`, `aso`, `research-engine`, `agent-access`, `deck-copy`,
 `deck-studio`, and `op-agent-vault-windows` ship a `.codex-plugin/plugin.json`. `keys-keeper` and
 `opencode-provider-auditor` have separate Codex marketplaces. The other plugins
 are listed, but Codex support is not confirmed.
@@ -52,6 +52,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **deck-copy** | Write and revise presentation text for its audience and delivery format. | [source](https://github.com/kyzdes/deck-copy-skill) |
 | **deck-studio** | Build an animated single-file HTML presentation with a morphing particle field or a light corporate grid style, from moodboard and story to a verified, offline deck with presenter notes. | [source](https://github.com/kyzdes/deck-studio-skill) |
 | **op-agent-vault-windows** | Windows only: let every agent read and write one dedicated 1Password vault through a service account, with no password, Windows Hello or approval prompts. | [source](https://github.com/kyzdes/op-agent-vault-windows-skill) |
+| **agentix-notes** | Use Agentix Notes, a shared agent memory of sourced notes, databases and files, over MCP. Private repository; access required. | [source](https://github.com/kyzdes/agentix-notes-skill) |
 
 Agent Access is available as `agent-access@claude-skills`. Its Marketplace package
 uses an existing runtime under `AGENT_ACCESS_HOME` or `~/.local/share/agent-access`;
