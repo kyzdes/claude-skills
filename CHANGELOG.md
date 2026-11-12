@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.30.0] — 2026-11-12
+
+- Move Agentix from `2441cb4` (0.5.0) to `214a9f2` (0.6.0): the skill now
+  describes activity/inbox cursors, the `project` selector for documents that
+  share a slug, optional `expectedRevision` on project, epic and milestone
+  updates, cursor-paged comments, trimmed issue write results and the 200-item
+  caps. Its updater gained an OS lock and a deadline. These service changes are
+  not deployed to production yet; the skill detects them from the live schema.
+- Preserve the existing 16 entries and installed plugin states.
+
 ## [1.29.0] — 2026-10-27
 
 - Add op-agent-vault-windows (0.1.0, `eddc99e`) from its public source
