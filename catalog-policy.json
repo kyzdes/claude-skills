@@ -3,7 +3,8 @@
     "kyzdes/model-to-bot",
     "kyzdes/aso-skill",
     "kyzdes/agent-access",
-    "kyzdes/agentix-notes-skill"
+    "kyzdes/agentix-notes-skill",
+    "kyzdes/mobbin-pool-skill"
   ],
   "shared_updater_plugins": [
     "keys-keeper",

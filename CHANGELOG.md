@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.32.0] — 2026-11-14
+
+- Add mobbin-pool (0.1.0, `3536bad`) from its private source repository: one
+  shared skill for Claude Code and Codex that explains Mobbin through the owner's
+  pool gateway — connecting with a pool key, good queries and Deep Search credits,
+  collections, pinning one Mobbin account for a piece of work, and the gateway's
+  answers. It ships no MCP server, hook or credential.
+- Fix the plugin count in the README (it still said 16).
+- Preserve the existing 17 entries and installed plugin states.
+
 ## [1.31.0] — 2026-11-12
 
 - Add agentix-notes (0.1.0, `bd07da9`) from its private source repository: one

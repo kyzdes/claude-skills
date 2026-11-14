@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.31.0"
+        "version": "1.32.0"
     },
     "plugins": [
         {
@@ -160,6 +160,15 @@
                 "source": "url",
                 "url": "https://github.com/kyzdes/agentix-notes-skill.git",
                 "sha": "bd07da902661347dc9f906da4fcc8fbb7eb4ca6c"
+            }
+        },
+        {
+            "name": "mobbin-pool",
+            "description": "Teach AI agents to use Mobbin (UI screens, flows and website sections) through the owner's Mobbin pool gateway: connect with a pool key, search and save well, pick one Mobbin account for a piece of work, spend Deep Search credits wisely, and read the gateway's answers. (Private repo — installs for the owner.)",
+            "source": {
+                "source": "url",
+                "url": "https://github.com/kyzdes/mobbin-pool-skill.git",
+                "sha": "3536bad3e147c36ad1669b653d90bdaff1aeab88"
             }
         }
     ]
