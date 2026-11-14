@@ -4,7 +4,8 @@
     "kyzdes/aso-skill",
     "kyzdes/agent-access",
     "kyzdes/agentix-notes-skill",
-    "kyzdes/mobbin-pool-skill"
+    "kyzdes/mobbin-pool-skill",
+    "kyzdes/op-agent-skill"
   ],
   "shared_updater_plugins": [
     "keys-keeper",
