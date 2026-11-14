@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.35.0] — 2026-11-15
+
+- Move research-engine from `1656d86` (0.5.1) to `3bd4b05` (0.6.0): a second skill,
+  research-pipeline, researches a set of objects (accounts, posts, courses, repos,
+  people, datasets) — interview, plan, registry in Agentix Notes, random stratified
+  sample with user calibration, batches, and a report whose numbers come from SQL.
+  It creates its Research project and tables itself and ships `canon.py` for
+  canonical keys (Python 3.9+, stdlib). Claude Code and Codex manifests are aligned.
+- Preserve the existing 19 entries and installed plugin states.
+
 ## [1.34.0] — 2026-11-14
 
 - Move mobbin-pool from `87d4c14` (0.1.1) to `ec6ebb8` (0.2.0): the plugin now also
