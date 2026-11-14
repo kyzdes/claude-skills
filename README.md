@@ -53,7 +53,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **deck-studio** | Build an animated single-file HTML presentation with a morphing particle field or a light corporate grid style, from moodboard and story to a verified, offline deck with presenter notes. | [source](https://github.com/kyzdes/deck-studio-skill) |
 | **op-agent-vault-windows** | Windows only: let every agent read and write one dedicated 1Password vault through a service account, with no password, Windows Hello or approval prompts. | [source](https://github.com/kyzdes/op-agent-vault-windows-skill) |
 | **agentix-notes** | Use Agentix Notes, a shared agent memory of sourced notes, databases and files, over MCP. Private repository; access required. | [source](https://github.com/kyzdes/agentix-notes-skill) |
-| **mobbin-pool** | Use Mobbin screens, flows, sections and collections through the owner's pool of Mobbin accounts; pin one account for a piece of work. Private repository; access required. | [source](https://github.com/kyzdes/mobbin-pool-skill) |
+| **mobbin-pool** | Use Mobbin screens, flows, sections and collections through the owner's pool of Mobbin accounts; pin one account for a piece of work. Also for Kimi Code and OpenCode from a local clone (see its README). Private repository; access required. | [source](https://github.com/kyzdes/mobbin-pool-skill) |
 | **op-agent** | macOS, Linux and Windows: let agents use 1Password through a service account with no Touch ID, Windows Hello or password prompts; the token stays in the OS secret store, plus an in-memory SSH key helper. Private repository; access required. | [source](https://github.com/kyzdes/op-agent-skill) |
 
 Agent Access is available as `agent-access@claude-skills`. Its Marketplace package

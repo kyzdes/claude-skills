@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.34.0] — 2026-11-14
+
+- Move mobbin-pool from `87d4c14` (0.1.1) to `ec6ebb8` (0.2.0): the plugin now also
+  serves Kimi Code (manifest `.kimi-plugin/plugin.json`, installed with `/plugins install`
+  from a local clone, since Kimi downloads GitHub sources without credentials) and OpenCode
+  (`install-opencode.sh` copies the skill into its skills folder). The skill gained the MCP
+  config for both agents and per-agent pool keys. This marketplace still serves only
+  Claude Code and Codex.
+- Preserve the existing 19 entries and installed plugin states.
+
 ## [1.33.0] — 2026-11-14
 
 - Add op-agent (0.1.0, `141bdd3`) from its private source repository: one
