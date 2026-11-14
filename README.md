@@ -47,7 +47,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **tailscale-vpn-coexist** | Diagnose Tailscale routing and proxy conflicts with a VPN client. | [source](https://github.com/kyzdes/tailscale-vpn-coexist-skill) |
 | **opencode-provider-auditor** | Inspect and configure OpenAI-compatible providers in OpenCode. | [source](https://github.com/kyzdes/opencode-provider-auditor) |
 | **aso** | Research and improve App Store listings. Private repository; access required. | [source](https://github.com/kyzdes/aso-skill) |
-| **research-engine** | Build a source-backed research knowledge base and methodology. | [source](https://github.com/kyzdes/research-engine-skill) |
+| **research-engine** | Build a source-backed research knowledge base and methodology; research-pipeline builds, samples and judges a corpus of objects in Agentix Notes. | [source](https://github.com/kyzdes/research-engine-skill) |
 | **agent-access** | Shared 1Password API, SSH and env operations, plus credential saving, organization and comments. Requires a separately configured machine-access runtime; writes require Connect WRITE. Private repository; owner access required. | [source](https://github.com/kyzdes/agent-access) |
 | **deck-copy** | Write and revise presentation text for its audience and delivery format. | [source](https://github.com/kyzdes/deck-copy-skill) |
 | **deck-studio** | Build an animated single-file HTML presentation with a morphing particle field or a light corporate grid style, from moodboard and story to a verified, offline deck with presenter notes. | [source](https://github.com/kyzdes/deck-studio-skill) |
