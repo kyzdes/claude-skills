@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.33.0] — 2026-11-14
+
+- Add op-agent (0.1.0, `141bdd3`) from its private source repository: one
+  plugin for macOS, Linux and Windows that lets agents use 1Password through a
+  service account with no Touch ID, Windows Hello or password prompts. The
+  `op-agent` wrapper keeps the token in the OS secret store (Keychain, Secret
+  Service or a 0600 file, DPAPI); `server-agent` loads an SSH key into a
+  throwaway in-memory ssh-agent. It ships Claude Code and Codex manifests.
+- Preserve the existing 18 entries and installed plugin states.
+
 ## [1.32.1] — 2026-11-14
 
 - Move mobbin-pool from `3536bad` (0.1.0) to `87d4c14` (0.1.1): the skill now knows Mobbin's
