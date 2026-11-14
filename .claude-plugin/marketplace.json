@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.33.0"
+        "version": "1.34.0"
     },
     "plugins": [
         {
@@ -164,11 +164,11 @@
         },
         {
             "name": "mobbin-pool",
-            "description": "Teach AI agents to use Mobbin (UI screens, flows and website sections) through the owner's Mobbin pool gateway: connect with a pool key, search and save well, pick one Mobbin account for a piece of work, spend Deep Search credits wisely, and read the gateway's answers. (Private repo — installs for the owner.)",
+            "description": "Teach AI agents to use Mobbin (UI screens, flows and website sections) through the owner's Mobbin pool gateway: connect with a pool key, search and save well, pick one Mobbin account for a piece of work, spend Deep Search credits wisely, and read the gateway's answers. Claude Code and Codex install from this marketplace; Kimi Code and OpenCode from a local clone (Kimi plugin manifest, OpenCode installer). (Private repo — installs for the owner.)",
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/mobbin-pool-skill.git",
-                "sha": "87d4c146a398ee517cd5e8fc3bf5cde6c22d7972"
+                "sha": "ec6ebb8e56d6be08d844206d0087e8cb582ea908"
             }
         },
         {
