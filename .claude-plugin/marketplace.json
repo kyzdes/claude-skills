@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.32.0"
+        "version": "1.32.1"
     },
     "plugins": [
         {
@@ -168,7 +168,7 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/mobbin-pool-skill.git",
-                "sha": "3536bad3e147c36ad1669b653d90bdaff1aeab88"
+                "sha": "87d4c146a398ee517cd5e8fc3bf5cde6c22d7972"
             }
         }
     ]

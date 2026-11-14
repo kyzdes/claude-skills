@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.1] — 2026-11-14
+
+- Move mobbin-pool from `3536bad` (0.1.0) to `87d4c14` (0.1.1): the skill now knows Mobbin's
+  daily Deep Search cap (500 per account, a tool error rather than a 429) and the AI credits beta.
+  The change was found by the router's nightly docs watch.
+- Preserve the existing 18 entries and installed plugin states.
+
 ## [1.32.0] — 2026-11-14
 
 - Add mobbin-pool (0.1.0, `3536bad`) from its private source repository: one
