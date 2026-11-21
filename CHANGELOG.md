@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.36.0] — 2026-11-21
+
+- Move op-agent from `141bdd3` (0.1.0) to `5f558b1` (0.2.0): Windows hardening. In
+  PowerShell the wrapper no longer leaves the service-account token in the caller's
+  session when `op` fails under `2>$null`, restores the caller's `OP_*` variables and
+  console encoding, and passes pipeline input to `op`. Git Bash gets an `op-agent` shim
+  that calls PowerShell directly instead of cmd.exe, which split arguments such as
+  `a&b` and ran the rest as a command. The installer no longer hangs without a
+  keyboard, writes the config as UTF-8, puts `~\.claude\bin` on PATH and gains
+  `-FromEnv` (migration from op-agent-vault-windows) and `-Rotate`. New offline
+  self-check `test-windows.ps1`. Claude Code and Codex manifests are aligned.
+- Preserve the existing 19 entries and installed plugin states.
+
 ## [1.35.0] — 2026-11-15
 
 - Move research-engine from `1656d86` (0.5.1) to `3bd4b05` (0.6.0): a second skill,

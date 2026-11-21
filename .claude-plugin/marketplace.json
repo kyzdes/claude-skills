@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.35.0"
+        "version": "1.36.0"
     },
     "plugins": [
         {
@@ -173,11 +173,11 @@
         },
         {
             "name": "op-agent",
-            "description": "macOS, Linux and Windows: agents use 1Password through a service account with no Touch ID, Windows Hello, password or desktop-app prompts. The op-agent wrapper keeps the token in the OS secret store and never prints it; server-agent loads an SSH key into a throwaway in-memory ssh-agent. Installers, agent rules and checks included. Private repository; owner access required.",
+            "description": "macOS, Linux and Windows: agents use 1Password through a service account with no Touch ID, Windows Hello, password or desktop-app prompts. The op-agent wrapper keeps the token in the OS secret store and never prints it; server-agent loads an SSH key into a throwaway in-memory ssh-agent. On Windows op-agent works by name in PowerShell, Git Bash and cmd.exe. Installers, agent rules and checks included. Private repository; owner access required.",
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/op-agent-skill.git",
-                "sha": "141bdd3f9edd2fab09f843b73f24385b21d4e84b"
+                "sha": "5f558b1bf96e05e800702a5d1e911431f9872c9d"
             }
         }
     ]
