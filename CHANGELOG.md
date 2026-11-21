@@ -8,7 +8,7 @@
   console encoding, and passes pipeline input to `op`. Git Bash gets an `op-agent` shim
   that calls PowerShell directly instead of cmd.exe, which split arguments such as
   `a&b` and ran the rest as a command. The installer no longer hangs without a
-  keyboard, writes the config as UTF-8, puts `~\.claudein` on PATH and gains
+  keyboard, writes the config as UTF-8, puts `~\.claude\bin` on PATH and gains
   `-FromEnv` (migration from op-agent-vault-windows) and `-Rotate`. New offline
   self-check `test-windows.ps1`. Claude Code and Codex manifests are aligned.
 - Preserve the existing 19 entries and installed plugin states.
