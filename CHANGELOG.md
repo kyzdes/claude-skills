@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.36.1] — 2026-11-21
+
+- Move op-agent from `5f558b1` (0.2.0) to `d444832` (0.2.1): in 0.2.0 every call from
+  Git Bash or cmd.exe waited until the caller closed stdin (a `powershell -File` script
+  that references `$input` drains a redirected stdin before exiting), so agent shells that
+  keep stdin open hung. The shim and `op-agent.cmd` now start `powershell -InputFormat None`
+  and `op` inherits stdin. The Windows self-check has 25 checks, two of them for this.
+- Preserve the existing 19 entries and installed plugin states.
+
 ## [1.36.0] — 2026-11-21
 
 - Move op-agent from `141bdd3` (0.1.0) to `5f558b1` (0.2.0): Windows hardening. In

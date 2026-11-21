@@ -6,7 +6,7 @@
     },
     "metadata": {
         "description": "kyzdes' personal Claude Code skill marketplace.",
-        "version": "1.36.0"
+        "version": "1.36.1"
     },
     "plugins": [
         {
@@ -177,7 +177,7 @@
             "source": {
                 "source": "url",
                 "url": "https://github.com/kyzdes/op-agent-skill.git",
-                "sha": "5f558b1bf96e05e800702a5d1e911431f9872c9d"
+                "sha": "d4448328f36c5124c7f35449255b15244208361a"
             }
         }
     ]
