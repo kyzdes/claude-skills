@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.37.3] — 2026-11-22
+
+- Move router-inventory from `f1e4baf` (0.1.2) to `7a206a5` (0.1.3): OpenCode's router key is also
+  found in `opencode.db` (read-only), where newer OpenCode Desktop keeps it instead of `auth.json`.
+- Preserve the existing 20 entries and installed plugin states.
+
 ## [1.37.2] — 2026-11-22
 
 - Move router-inventory from `e3341a7` (0.1.1) to `f1e4baf` (0.1.2): the snapshot also lists the
