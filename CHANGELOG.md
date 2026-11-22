@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.37.0] — 2026-11-22
+
+- Add router-inventory at `922b9a6` (0.1.0): snapshots which programs on a machine
+  (OpenCode, Hermes, Codex, Claude Code; other files that mention the router go to the
+  agent for review) use the owner's LLM router, with which LiteLLM key alias and models,
+  and flags configured models the router no longer serves. Sent by hand to the router's
+  tailnet-only inventory (`kyzdes/llm-router`, `inventory/`); `report --model` shows where
+  a model is configured across machines. Keys never leave the machine. Private repository;
+  Claude Code and Codex manifests.
+- Preserve the existing 19 entries and installed plugin states.
+
 ## [1.36.1] — 2026-11-21
 
 - Move op-agent from `5f558b1` (0.2.0) to `d444832` (0.2.1): in 0.2.0 every call from

@@ -5,7 +5,8 @@
     "kyzdes/agent-access",
     "kyzdes/agentix-notes-skill",
     "kyzdes/mobbin-pool-skill",
-    "kyzdes/op-agent-skill"
+    "kyzdes/op-agent-skill",
+    "kyzdes/router-inventory-skill"
   ],
   "shared_updater_plugins": [
     "keys-keeper",
