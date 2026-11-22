@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.37.1] — 2026-11-22
+
+- Move router-inventory from `922b9a6` (0.1.0) to `e3341a7` (0.1.1): a parser error no longer
+  copies a config line (possibly a secret) into the snapshot; keys are caught after `\n`, `_` or a
+  digit; `send` refuses a file that contains any key found on the machine; the leak check no longer
+  relies on `assert`. README gains the marketplace install lines.
+- Preserve the existing 20 entries and installed plugin states.
+
 ## [1.37.0] — 2026-11-22
 
 - Add router-inventory at `922b9a6` (0.1.0): snapshots which programs on a machine
