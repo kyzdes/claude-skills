@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.37.2] — 2026-11-22
+
+- Move router-inventory from `e3341a7` (0.1.1) to `f1e4baf` (0.1.2): the snapshot also lists the
+  AI programs installed on the machine (Cursor, VS Code, Zed, Claude, Codex and others), routed or
+  not, so SuperGateway can show the routed ones apart.
+- Preserve the existing 20 entries and installed plugin states.
+
 ## [1.37.1] — 2026-11-22
 
 - Move router-inventory from `922b9a6` (0.1.0) to `e3341a7` (0.1.1): a parser error no longer
