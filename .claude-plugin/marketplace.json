@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.37.4"
+    "version": "1.38.0"
   },
   "plugins": [
     {
@@ -187,6 +187,15 @@
         "source": "url",
         "url": "https://github.com/kyzdes/router-inventory-skill.git",
         "sha": "4287c841a79b9d1178b665c34b5d02a07f3e7d32"
+      }
+    },
+    {
+      "name": "resilient-fetch",
+      "description": "Fetch pages that block ordinary clients: browser TLS/JA3 impersonation through curl_cffi with paired (impersonate, User-Agent) profiles, exit-IP rotation through a proxy pool with cooldowns, SOCKS5 to HTTP fallback on the same gateway, cookie isolation per request, and a doctor that classifies every proxy failure by type. Private repository; owner access required.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/resilient-fetch-skill.git",
+        "sha": "1b23edbf19fce249f7d2337274a6a9967f224611"
       }
     }
   ]
