@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.37.3"
+    "version": "1.37.4"
   },
   "plugins": [
     {
@@ -186,7 +186,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/router-inventory-skill.git",
-        "sha": "7a206a5992b7f1f24a98397a56c31718fd1478d4"
+        "sha": "4287c841a79b9d1178b665c34b5d02a07f3e7d32"
       }
     }
   ]
