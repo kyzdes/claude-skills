@@ -1,6 +1,6 @@
 # kyzdes / claude-skills
 
-A personal marketplace of 19 plugins for Claude Code. Codex can also read this
+A personal marketplace of 20 plugins for Claude Code. Codex can also read this
 catalog; compatibility depends on each plugin's packaged skills and integrations.
 The canonical catalog is `.claude-plugin/marketplace.json`.
 
@@ -14,7 +14,7 @@ Claude Code:
 ```
 
 Replace `clarity` with a plugin name from the table. `model-to-bot`, `aso`,
-`agent-access`, `op-agent` and `router-inventory` require access to their private repositories; adding the public catalog does not
+`agent-access`, `op-agent`, `router-inventory` and `resilient-fetch` require access to their private repositories; adding the public catalog does not
 grant that access.
 
 Codex CLI:
@@ -26,7 +26,7 @@ codex plugin add clarity@claude-skills
 ```
 
 `agentix`, `agentix-notes`, `mobbin-pool`, `clarity`, `aso`, `research-engine`, `agent-access`, `deck-copy`,
-`deck-studio`, `op-agent-vault-windows`, `op-agent`, and `router-inventory` ship a `.codex-plugin/plugin.json`. `keys-keeper` and
+`deck-studio`, `op-agent-vault-windows`, `op-agent`, `router-inventory` and `resilient-fetch` ship a `.codex-plugin/plugin.json`. `keys-keeper` and
 `opencode-provider-auditor` have separate Codex marketplaces. The other plugins
 are listed, but Codex support is not confirmed.
 This does not certify every plugin's MCP server or hook on both hosts.
@@ -56,6 +56,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **mobbin-pool** | Use Mobbin screens, flows, sections and collections through the owner's pool of Mobbin accounts; pin one account for a piece of work. Also for Kimi Code and OpenCode from a local clone (see its README). Private repository; access required. | [source](https://github.com/kyzdes/mobbin-pool-skill) |
 | **op-agent** | macOS, Linux and Windows: let agents use 1Password through a service account with no Touch ID, Windows Hello or password prompts; the token stays in the OS secret store, plus an in-memory SSH key helper; on Windows it works by name in PowerShell, Git Bash and cmd.exe. Private repository; access required. | [source](https://github.com/kyzdes/op-agent-skill) |
 | **router-inventory** | Snapshot which programs on a machine use the owner's LLM router, with which key alias and models, into the router's tailnet-only inventory; report where a model is configured. Manual runs only. Private repository; access required. | [source](https://github.com/kyzdes/router-inventory-skill) |
+| **resilient-fetch** | Fetch pages that block ordinary clients: browser TLS impersonation, paired (impersonate, User-Agent) profiles, exit-IP rotation through a proxy pool, SOCKS5 to HTTP fallback, and a doctor that classifies every proxy failure. Private repository; access required. | [source](https://github.com/kyzdes/resilient-fetch-skill) |
 
 Agent Access is available as `agent-access@claude-skills`. Its Marketplace package
 uses an existing runtime under `AGENT_ACCESS_HOME` or `~/.local/share/agent-access`;

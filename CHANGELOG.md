@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.38.0] — 2026-11-23
+
+- Add `resilient-fetch` (private source `kyzdes/resilient-fetch-skill`, pinned `1b23edb`): a portable
+  anti-ban HTTP transport — browser TLS/JA3 impersonation through curl_cffi with paired
+  (impersonate, User-Agent) profiles, exit-IP rotation through a proxy pool with cooldowns,
+  SOCKS5 to HTTP fallback on the same gateway, cookie isolation per request, and a pool doctor
+  that classifies every proxy failure by type.
+- Preserve the existing 20 entries and installed plugin states.
+
 ## [1.37.4] — 2026-11-23
 
 - Move router-inventory from `7a206a5` (0.1.3) to `4287c84` (0.1.4): `send` and `report` no longer
