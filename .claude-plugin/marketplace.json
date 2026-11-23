@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.38.0"
+    "version": "1.38.1"
   },
   "plugins": [
     {
@@ -195,7 +195,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/kyzdes/resilient-fetch-skill.git",
-        "sha": "1b23edbf19fce249f7d2337274a6a9967f224611"
+        "sha": "ac283f801f002cc95d684740910b70a31d419766"
       }
     }
   ]

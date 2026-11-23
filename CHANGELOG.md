@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.1] — 2026-11-23
+
+- Move `resilient-fetch` from `1b23edb` (1.0.0) to `ac283f8` (1.0.1): the TLS session
+  options are now built from the ones the installed curl_cffi actually has, so a release without
+  `CurlOpt.NETRC` cannot break the import. Hosts that pin curl_cffi 0.16.3 keep working.
+- Preserve the existing 21 entries and installed plugin states.
+
 ## [1.38.0] — 2026-11-23
 
 - Add `resilient-fetch` (private source `kyzdes/resilient-fetch-skill`, pinned `1b23edb`): a portable
