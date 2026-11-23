@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.37.4] — 2026-11-23
+
+- Move router-inventory from `7a206a5` (0.1.3) to `4287c84` (0.1.4): `send` and `report` no longer
+  sweep the home folder for unparsed files (about 30 s saved on each); Codex on Python older than
+  3.11 says it needs 3.11+ instead of "could not parse"; tests cover `send` and `report --model`.
+- Preserve the existing 20 entries and installed plugin states.
+
 ## [1.37.3] — 2026-11-22
 
 - Move router-inventory from `f1e4baf` (0.1.2) to `7a206a5` (0.1.3): OpenCode's router key is also
