@@ -7,7 +7,8 @@
     "kyzdes/mobbin-pool-skill",
     "kyzdes/op-agent-skill",
     "kyzdes/router-inventory-skill",
-    "kyzdes/resilient-fetch-skill"
+    "kyzdes/resilient-fetch-skill",
+    "kyzdes/site-craft-skill"
   ],
   "shared_updater_plugins": [
     "keys-keeper",
