@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.39.0] — 2026-11-26
+
+- Add `site-craft` (private source `kyzdes/site-craft-skill`, pinned `d8a823d`, 0.1.0): the approach
+  behind budka.app for stylish sites and landing pages — product metaphor as the page's scene, colours
+  and fonts with written roles, Mobbin references block by block, a moodboard with three live
+  directions before layout, blocks as working demos, short honest copy and a hand-over checklist.
+- Preserve the existing 21 entries and installed plugin states.
+
 ## [1.38.1] — 2026-11-23
 
 - Move `resilient-fetch` from `1b23edb` (1.0.0) to `ac283f8` (1.0.1): the TLS session
