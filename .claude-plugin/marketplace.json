@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.39.1"
+    "version": "1.40.0"
   },
   "plugins": [
     {
@@ -205,6 +205,15 @@
         "source": "url",
         "url": "https://github.com/kyzdes/site-craft-skill.git",
         "sha": "1608b64a584938187a2677dceb3a947dcf0c2f8e"
+      }
+    },
+    {
+      "name": "loop-clip",
+      "description": "Short looping promo clip (GIF + MP4) for a social feed from one HTML page drawn in the product's own design: storyboards to choose from, a page that is a pure function of time, a Swift frame shooter, a check script with contact sheets, and an independent critic agent. macOS only, needs ffmpeg. (Private repo — installs for the owner.)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/loop-clip-skill.git",
+        "sha": "810d28fd750b2b85e57033f12ccf8ca15a40cc7c"
       }
     }
   ]
