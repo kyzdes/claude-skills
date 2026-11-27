@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.40.0] — 2026-11-27
+
+- Add `loop-clip` (private source `kyzdes/loop-clip-skill`, pinned `810d28f`, 0.1.0): a short looping
+  promo clip (GIF + MP4) for a social feed from one HTML page — storyboards to choose from, a page that
+  is a pure function of time, a Swift frame shooter, a check script with contact sheets and an
+  independent critic agent. macOS only.
+- Preserve the existing 22 entries and installed plugin states.
+
 ## [1.39.1] — 2026-11-27
 
 - Move `site-craft` from `d8a823d` (0.1.0) to `1608b64` (0.1.1); its source `kyzdes/site-craft-skill`
