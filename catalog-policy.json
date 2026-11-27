@@ -8,7 +8,8 @@
     "kyzdes/op-agent-skill",
     "kyzdes/router-inventory-skill",
     "kyzdes/resilient-fetch-skill",
-    "kyzdes/loop-clip-skill"
+    "kyzdes/loop-clip-skill",
+    "kyzdes/unidraw-skill"
   ],
   "shared_updater_plugins": [
     "keys-keeper",

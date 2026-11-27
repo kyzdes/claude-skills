@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "kyzdes' personal Claude Code skill marketplace.",
-    "version": "1.40.1"
+    "version": "1.41.0"
   },
   "plugins": [
     {
@@ -214,6 +214,15 @@
         "source": "url",
         "url": "https://github.com/kyzdes/loop-clip-skill.git",
         "sha": "0dbf894e61ca41054190defea9b4696d8c17757b"
+      }
+    },
+    {
+      "name": "unidraw",
+      "description": "Draw and edit UniDraw (unidraw.io) boards through its MCP: process maps, architecture and data-flow schemes, BPMN. A standard-library Python builder lays out frames, coloured cards, data chips and arrows, checks the layout and pushes it in batches with resume; plus the live MCP contract, a house style and the BPMN paths. (Private repo — installs for the owner.)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/kyzdes/unidraw-skill.git",
+        "sha": "42bff7c2a5addadc6957453fc3119fd80d363405"
       }
     }
   ]
