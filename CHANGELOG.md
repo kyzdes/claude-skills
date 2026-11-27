@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.39.1] — 2026-11-27
+
+- Move `site-craft` from `d8a823d` (0.1.0) to `1608b64` (0.1.1); its source `kyzdes/site-craft-skill`
+  is now public. The skill no longer depends on owner-only tools (Mobbin pool, clarity, impeccable are
+  used when present) and its README shows how to install it in Codex.
+- Preserve the existing 22 entries and installed plugin states.
+
 ## [1.39.0] — 2026-11-26
 
 - Add `site-craft` (private source `kyzdes/site-craft-skill`, pinned `d8a823d`, 0.1.0): the approach
