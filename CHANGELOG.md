@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.41.0] — 2026-11-27
+
+- Add `unidraw` (private source `kyzdes/unidraw-skill`, pinned `42bff7c`, 0.1.0): boards in UniDraw through
+  its MCP — a standard-library builder (layout, self-check, batched push with resume), a sample generator,
+  the MCP contract checked live on 2026-11-27, the house style with palettes, native BPMN and XML import.
+- README: the plugin count now matches the catalog (24).
+- Preserve the existing 23 entries and installed plugin states.
+
 ## [1.40.1] — 2026-11-27
 
 - Move `loop-clip` from `810d28f` (0.1.0) to `0dbf894` (0.2.0): looping is now one of two endings

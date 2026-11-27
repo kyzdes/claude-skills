@@ -1,6 +1,6 @@
 # kyzdes / claude-skills
 
-A personal marketplace of 22 plugins for Claude Code. Codex can also read this
+A personal marketplace of 24 plugins for Claude Code. Codex can also read this
 catalog; compatibility depends on each plugin's packaged skills and integrations.
 The canonical catalog is `.claude-plugin/marketplace.json`.
 
@@ -14,7 +14,7 @@ Claude Code:
 ```
 
 Replace `clarity` with a plugin name from the table. `model-to-bot`, `aso`,
-`agent-access`, `op-agent`, `router-inventory` and `resilient-fetch` require access to their private repositories; adding the public catalog does not
+`agent-access`, `op-agent`, `router-inventory`, `resilient-fetch` and `unidraw` require access to their private repositories; adding the public catalog does not
 grant that access.
 
 Codex CLI:
@@ -26,7 +26,7 @@ codex plugin add clarity@claude-skills
 ```
 
 `agentix`, `agentix-notes`, `mobbin-pool`, `clarity`, `aso`, `research-engine`, `agent-access`, `deck-copy`,
-`deck-studio`, `op-agent-vault-windows`, `op-agent`, `router-inventory` and `resilient-fetch` ship a `.codex-plugin/plugin.json`. `keys-keeper` and
+`deck-studio`, `op-agent-vault-windows`, `op-agent`, `router-inventory`, `resilient-fetch` and `unidraw` ship a `.codex-plugin/plugin.json`. `keys-keeper` and
 `opencode-provider-auditor` have separate Codex marketplaces. The other plugins
 are listed, but Codex support is not confirmed.
 This does not certify every plugin's MCP server or hook on both hosts.
@@ -59,6 +59,7 @@ Open a new Codex task after changing installed plugins so it picks up the new sk
 | **resilient-fetch** | Fetch pages that block ordinary clients: browser TLS impersonation, paired (impersonate, User-Agent) profiles, exit-IP rotation through a proxy pool, SOCKS5 to HTTP fallback, and a doctor that classifies every proxy failure. Private repository; access required. | [source](https://github.com/kyzdes/resilient-fetch-skill) |
 | **site-craft** | Build a stylish site or landing page the way budka.app was made: product metaphor as the page's scene, colours with written roles, Mobbin references block by block, a moodboard with three live directions before layout, blocks that work as small demos. Works in Codex too. | [source](https://github.com/kyzdes/site-craft-skill) |
 | **loop-clip** | Make a short silent promo clip (MP4 + GIF) for a social feed, looping or played once, from one HTML page in the product's own design: storyboards, a frame-by-frame shooter, a check with contact sheets, an independent critic. macOS only. Private repository; access required. | [source](https://github.com/kyzdes/loop-clip-skill) |
+| **unidraw** | Draw and edit UniDraw boards through its MCP: process maps, architecture and data-flow schemes, BPMN. A Python builder lays out and checks the board, pushes it in batches and resumes after a failure. Works in Codex too. Private repository; access required. | [source](https://github.com/kyzdes/unidraw-skill) |
 
 Agent Access is available as `agent-access@claude-skills`. Its Marketplace package
 uses an existing runtime under `AGENT_ACCESS_HOME` or `~/.local/share/agent-access`;
