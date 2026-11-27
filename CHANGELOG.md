@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.40.1] — 2026-11-27
+
+- Move `loop-clip` from `810d28f` (0.1.0) to `0dbf894` (0.2.0): looping is now one of two endings
+  (loop or play once and hold the call to action), with a size table for feed, stories, README and 16:9.
+- Preserve the existing 23 entries and installed plugin states.
+
 ## [1.40.0] — 2026-11-27
 
 - Add `loop-clip` (private source `kyzdes/loop-clip-skill`, pinned `810d28f`, 0.1.0): a short looping
